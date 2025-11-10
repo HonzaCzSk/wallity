@@ -1,16 +1,41 @@
-# safe_banking_app
+# Safe Banking App
 
-A new Flutter project.
+**Safe Banking** je mobilní aplikace zaměřená na bezpečnost plateb a prevenci podvodů.  
+Pomáhá uživatelům řešit situace se ztracenou nebo odcizenou kartou, podezřelými platbami a phishingovými útoky. Současně nabízí edukativní hru, kde si uživatelé mohou vyzkoušet simulace podvodných útoků a kvízy.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## Funkce
 
-A few resources to get you started if this is your first Flutter project:
+### 1️⃣ Postupy a kontakty
+- Rychlé návody pro situace:
+  - Ztráta nebo krádež karty
+  - Podezřelá platba
+  - Kliknutí na podvodný e-mail nebo zprávu
+- Offline přístup k návodům a kontaktům na banky
+- Přehledný seznam kroků, jak zablokovat kartu a chránit své finance
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 2️⃣ Edukativní hra / kvíz
+- Simulace podvodných útoků
+- Otázky a kvízy na téma bezpečnosti plateb
+- Získávání bodů, postupování mezi arénami / světy
+- Hra slouží k zábavnému učení bezpečných návyků
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## Technické informace
+
+- **Platformy:** Android & iOS  
+- **Framework:** Flutter  
+- **Offline podpora:** data pro postupy jsou dostupná bez připojení k internetu  
+- **Cílová skupina:** mladší lidé a střední věk, obecná veřejnost
+
+---
+
+## Instalace a spuštění
+
+1. Nainstalujte Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)  
+2. Klonujte repozitář:
+   ```bash
+   git clone git@github.com:HonzaCzSk/safe_banking.git
+   cd safe_banking
