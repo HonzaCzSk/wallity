@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Česká spořitelna",
+    "website": "https://www.csas.cz",
+    "hotline": "+420 800 207 207",
+    "description": "Největší banka v České republice s širokou nabídkou služeb pro občany i podnikatele.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Ceska_sporitelna_logo.svg"
+  },
+  {
+    "name": "Komerční banka",
+    "website": "https://www.kb.cz",
+    "hotline": "+420 800 521 521",
+    "description": "Tradiční česká banka s důrazem na stabilitu, digitalizaci a firemní klientelu.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/5/53/Komerční_banka_logo.svg"
+  },
+  {
+    "name": "Air Bank",
+    "website": "https://www.airbank.cz",
+    "hotline": "+420 515 202 202",
+    "description": "Moderní online banka známá přehlednou aplikací a férovým přístupem k zákazníkům.",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/7/72/Air_Bank_logo.svg"
+  }
+]
