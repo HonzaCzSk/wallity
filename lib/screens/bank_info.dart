@@ -188,11 +188,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   const DropdownMenuItem(
                     value: "rating_best",
-                    child: Text("Nejlepší rating"),
+                    child: Text("Od nejlepší"),
                   ),
                   const DropdownMenuItem(
                     value: "rating_worst",
-                    child: Text("Nejhorší rating"),
+                    child: Text("Od nejhorší"),
                   ),
                 ],
                 onChanged: (value) {
@@ -207,7 +207,6 @@ class _HomeScreenState extends State<HomeScreen> {
         body: allBanks.isEmpty
             ? const Center(child: CircularProgressIndicator())
             : TabBarView(
-                physics: const NeverScrollableScrollPhysics(),
                 children: [
                   // Search tab
                   Column(

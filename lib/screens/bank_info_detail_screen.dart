@@ -30,7 +30,6 @@ class BankDetailScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // Rating badge
           Center(
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
@@ -52,24 +51,58 @@ class BankDetailScreen extends StatelessWidget {
           if (bank.images.isNotEmpty)
             CarouselSlider(
               items: bank.images.map((img) {
-                return ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: Image.asset(
-                    img,
-                    fit: BoxFit.cover,
-                    width: double.infinity,
-                  ),
+                return Builder(
+                  builder: (context) {
+                    final mq = MediaQuery.of(context);
+                    final int cacheW = (mq.size.width * mq.devicePixelRatio)
+                        .toInt();
+
+                    return GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => Dialog(
+                            insetPadding: const EdgeInsets.all(8),
+                            child: InteractiveViewer(
+                              panEnabled: true,
+                              clipBehavior: Clip.none,
+                              child: AspectRatio(
+                                aspectRatio: 16 / 9,
+                                child: Image.asset(
+                                  img,
+                                  fit: BoxFit.contain,
+                                  cacheWidth: cacheW,
+                                ),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: SizedBox(
+                          height: 180,
+                          width: double.infinity,
+                          child: Image.asset(
+                            img,
+                            fit: BoxFit.cover,
+                            cacheWidth: cacheW,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                 );
               }).toList(),
               options: CarouselOptions(
                 height: 180,
                 enlargeCenterPage: true,
                 autoPlay: true,
+                viewportFraction: 0.92,
               ),
             ),
 
           const SizedBox(height: 20),
-
           // Sections
           buildSection("Podvodné SMS / Email", bank.phishingExamples),
           buildSection("Časté podvody", bank.commonScams),

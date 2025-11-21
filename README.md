@@ -8,6 +8,7 @@ Pomáhá uživatelům řešit situace se ztracenou nebo odcizenou kartou, podez�
 ## Funkce
 
 ### 1️⃣ Postupy a kontakty
+
 - Rychlé návody pro situace:
   - Ztráta nebo krádež karty
   - Podezřelá platba
@@ -16,6 +17,7 @@ Pomáhá uživatelům řešit situace se ztracenou nebo odcizenou kartou, podez�
 - Přehledný seznam kroků, jak zablokovat kartu a chránit své finance
 
 ### 2️⃣ Edukativní hra / kvíz
+
 - Simulace podvodných útoků
 - Otázky a kvízy na téma bezpečnosti plateb
 - Získávání bodů, postupování mezi arénami / světy
@@ -36,6 +38,7 @@ Pomáhá uživatelům řešit situace se ztracenou nebo odcizenou kartou, podez�
 
 1. Nainstalujte Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)  
 2. Klonujte repozitář:
+
    ```bash
    git clone git@github.com:HonzaCzSk/safe_banking.git
    cd safe_banking

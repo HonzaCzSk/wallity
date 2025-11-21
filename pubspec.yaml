@@ -1,5 +1,5 @@
 name: safe_banking_app
-description: "A Flutter application providing information about safe banking practices."
+description: "A Flutter application providing information about safe banking practices and information about the banks in the country of Czechia."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -13,13 +13,14 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_launcher_icons: ^0.14.4
   carousel_slider: ^5.1.1
+  url_launcher: ^6.3.0
+  shared_preferences: ^2.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^6.0.0
-  url_launcher: ^6.3.0
   flutter_native_splash: ^2.2.20
 
 flutter:

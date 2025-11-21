@@ -35,49 +35,219 @@
       "assets/images/kb_app.png"
     ],
     "phishing_examples": [
-      "SMS: 'Vaše karta byla zablokována, potvrďte zde…'",
-      "Email: 'Bezpečnostní aktualizace účtu…'"
+      "SMS: 'Vaše karta končí, ověřte svou identitu…'",
+      "Email: 'Vaše KB Pojištění vyžaduje přihlášení…'"
     ],
     "common_scams": [
-      "Podvodné volání z falešného čísla banky",
-      "Falešná výzva k přihlášení k internetbankingu"
+      "Falešné call centrum KB",
+      "Podvržené e-maily o zablokované kartě"
     ],
     "recent_incidents": [
-      "Listopad 2024 – vlna falešných SMS",
-      "Říjen 2024 – phishing přes PDF přílohy"
+      "2024 – masivní phishing přes HTML přílohy"
     ],
     "recommended_actions": [
-      "Používejte biometriku",
-      "Neklikejte na zkrácené odkazy",
-      "Pravidelně kontrolujte transakce"
+      "Nekontaktujte banku přes odkazy z e-mailu",
+      "Nastavte si transakční limity"
     ]
   },
+
   {
     "id": 3,
-    "name": "Československá obchodní banka",
+    "name": "ČSOB",
     "rating": "A",
     "images": [
       "assets/images/csob_logo.png",
       "assets/images/csob_app.png"
     ],
     "phishing_examples": [
-      "SMS: 'Vaše karta byla zablokována, potvrďte zde…'",
-      "Email: 'Bezpečnostní aktualizace účtu…'"
+      "SMS: 'Nutná verifikace účtu ČSOB…'",
+      "Email: 'Vaše Smartbanking vyžaduje aktualizaci…'"
     ],
     "common_scams": [
-      "Podvodné volání z falešného čísla banky",
-      "Falešná výzva k přihlášení k internetbankingu"
+      "Podvodné přesměrování na falešný portál ČSOB",
+      "Falešné platby přes e-shop"
     ],
     "recent_incidents": [
-      "Listopad 2024 – vlna falešných SMS",
-      "Říjen 2024 – phishing přes PDF přílohy"
+      "2024 – útoky přes zkrácené URL v SMS"
     ],
     "recommended_actions": [
-      "Používejte biometriku",
-      "Neklikejte na zkrácené odkazy",
-      "Pravidelně kontrolujte transakce"
+      "Aktivujte notifikace o pohybech",
+      "Používejte oficiální aplikaci z App Store / Google Play"
+    ]
+  },
+
+  {
+    "id": 4,
+    "name": "Air Bank",
+    "rating": "A+",
+    "images": [
+      "assets/images/airbank_logo.png",
+      "assets/images/airbank_app.png"
+    ],
+    "phishing_examples": [
+      "Email: 'Potvrďte přihlášení k My Air'",
+      "SMS: 'Vaše karta byla pozastavena…'"
+    ],
+    "common_scams": [
+      "Falešné investiční nabídky vydávající se za Air Bank",
+      "Podvodné aplikace napodobující My Air"
+    ],
+    "recent_incidents": [
+      "2024 – falešné investiční portály kradoucí přístupy"
+    ],
+    "recommended_actions": [
+      "Nikdy neinstalujte APK mimo Google Play",
+      "Ověřujte si investiční nabídky na oficiálním webu"
+    ]
+  },
+
+  {
+    "id": 5,
+    "name": "Raiffeisenbank",
+    "rating": "A",
+    "images": [
+      "assets/images/rb_logo.png",
+      "assets/images/rb_app.png"
+    ],
+    "phishing_examples": [
+      "Email: 'Ověřte svou identitu v RB…'",
+      "SMS: 'RB Payment – potřebné ověření kódu'"
+    ],
+    "common_scams": [
+      "Podvodné investiční platformy",
+      "Falešné technické podpory RB"
+    ],
+    "recent_incidents": [
+      "2024 – phishing na klienty eKonto"
+    ],
+    "recommended_actions": [
+      "Neposílejte nikomu fotografie občanky",
+      "Povolit silné ověřování"
+    ]
+  },
+
+  {
+    "id": 6,
+    "name": "Fio banka",
+    "rating": "A-",
+    "images": [
+      "assets/images/fio_logo.png",
+      "assets/images/fio_app.png"
+    ],
+    "phishing_examples": [
+      "Email: 'Nové zabezpečení – nutné přihlášení'",
+      "SMS: 'Fio Pay – ověřovací kód potvrďte…'"
+    ],
+    "common_scams": [
+      "Falešné investiční nabídky",
+      "Podvodné e-shopy zneužívající Fio platby"
+    ],
+    "recent_incidents": [
+      "2023–2024: phishing přes falešné platební brány"
+    ],
+    "recommended_actions": [
+      "Kontrolujte URL platebních bran",
+      "Nepřihlašujte se přes veřejné Wi-Fi"
+    ]
+  },
+
+  {
+    "id": 7,
+    "name": "Moneta Money Bank",
+    "rating": "A",
+    "images": [
+      "assets/images/moneta_logo.png",
+      "assets/images/moneta_app.png"
+    ],
+    "phishing_examples": [
+      "Email: 'Ověřte svou Monetu kliknutím zde…'",
+      "SMS: 'Nepovedená platba – potvrďte…'"
+    ],
+    "common_scams": [
+      "Falešné technické podpory",
+      "Podvodné investiční platformy"
+    ],
+    "recent_incidents": [
+      "2024 – útoky přes podvodné call centrum"
+    ],
+    "recommended_actions": [
+      "Nikomu neříkejte autorizační kódy",
+      "Zkontrolujte číslo, ze kterého volají"
+    ]
+  },
+
+  {
+    "id": 8,
+    "name": "mBank",
+    "rating": "B+",
+    "images": [
+      "assets/images/mbank_logo.png",
+      "assets/images/mbank_app.png"
+    ],
+    "phishing_examples": [
+      "Email: 'Vaše mBank vyžaduje zabezpečení'",
+      "SMS: 'Platba čeká na ověření'"
+    ],
+    "common_scams": [
+      "Phishing přes falešné e-shopy",
+      "Podvodné investiční reklamy"
+    ],
+    "recent_incidents": [
+      "2024 – podvody přes marketplace"
+    ],
+    "recommended_actions": [
+      "Ověřujte e-shopy",
+      "Kontrolujte historii přihlášení"
+    ]
+  },
+
+  {
+    "id": 9,
+    "name": "UniCredit Bank",
+    "rating": "A-",
+    "images": [
+      "assets/images/unicredit_logo.png",
+      "assets/images/unicredit_app.png"
+    ],
+    "phishing_examples": [
+      "SMS: 'Váš účet byl pozastaven…'",
+      "Email: 'Nutné ověření UCB účtu'"
+    ],
+    "common_scams": [
+      "Technická podpora vydávající se za UCB",
+      "Podvodné investiční platformy"
+    ],
+    "recent_incidents": [
+      "2024 – falešné bankovní aplikace"
+    ],
+    "recommended_actions": [
+      "Stahujte aplikace jen z oficiálních storů",
+      "Nikdy nesdílejte přístupové údaje"
+    ]
+  },
+
+  {
+    "id": 10,
+    "name": "Creditas",
+    "rating": "A-",
+    "images": [
+      "assets/images/creditas_logo.png",
+      "assets/images/creditas_app.png"
+    ],
+    "phishing_examples": [
+      "Email: 'Potvrďte přihlášení ke Creditas'",
+      "SMS: 'Creditas Security: váš účet vyžaduje ověření'"
+    ],
+    "common_scams": [
+      "Podvodné nabídky investic",
+      "Falešné přihlášení přes odkaz"
+    ],
+    "recent_incidents": [
+      "2024 – phishing přes falešné portály"
+    ],
+    "recommended_actions": [
+      "Nepoužívejte stejné heslo jako jinde",
+      "Kontrolujte podezřelé zprávy"
     ]
   }
 ]
-
-

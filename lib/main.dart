@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
+import 'package:safe_banking_app/screens/home_page.dart';
 
 void main() {
   runApp(const SafeBankingApp());
@@ -17,7 +17,7 @@ class SafeBankingApp extends StatelessWidget {
         colorSchemeSeed: Colors.blue,
         brightness: Brightness.light,
       ),
-      home: const HomeScreen(),
+      home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
