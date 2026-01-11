@@ -4,8 +4,8 @@
     "name": "Česká spořitelna",
     "rating": "A",
     "images": [
-      "assets/images/cs_logo_bg.png",
-      "assets/images/george_logo.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "SMS: 'Vaše karta byla zablokována, potvrďte zde…'",
@@ -31,8 +31,8 @@
     "name": "Komerční banka",
     "rating": "A",
     "images": [
-      "assets/images/kb_logo.png",
-      "assets/images/kb_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "SMS: 'Vaše karta končí, ověřte svou identitu…'",
@@ -56,8 +56,8 @@
     "name": "ČSOB",
     "rating": "A",
     "images": [
-      "assets/images/csob_logo.png",
-      "assets/images/csob_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "SMS: 'Nutná verifikace účtu ČSOB…'",
@@ -81,8 +81,8 @@
     "name": "Air Bank",
     "rating": "A+",
     "images": [
-      "assets/images/airbank_logo.png",
-      "assets/images/airbank_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "Email: 'Potvrďte přihlášení k My Air'",
@@ -106,8 +106,8 @@
     "name": "Raiffeisenbank",
     "rating": "A",
     "images": [
-      "assets/images/rb_logo.png",
-      "assets/images/rb_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "Email: 'Ověřte svou identitu v RB…'",
@@ -131,8 +131,8 @@
     "name": "Fio banka",
     "rating": "A-",
     "images": [
-      "assets/images/fio_logo.png",
-      "assets/images/fio_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "Email: 'Nové zabezpečení – nutné přihlášení'",
@@ -156,8 +156,8 @@
     "name": "Moneta Money Bank",
     "rating": "A",
     "images": [
-      "assets/images/moneta_logo.png",
-      "assets/images/moneta_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "Email: 'Ověřte svou Monetu kliknutím zde…'",
@@ -181,8 +181,8 @@
     "name": "mBank",
     "rating": "B+",
     "images": [
-      "assets/images/mbank_logo.png",
-      "assets/images/mbank_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "Email: 'Vaše mBank vyžaduje zabezpečení'",
@@ -206,8 +206,8 @@
     "name": "UniCredit Bank",
     "rating": "A-",
     "images": [
-      "assets/images/unicredit_logo.png",
-      "assets/images/unicredit_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "SMS: 'Váš účet byl pozastaven…'",
@@ -231,8 +231,8 @@
     "name": "Creditas",
     "rating": "A-",
     "images": [
-      "assets/images/creditas_logo.png",
-      "assets/images/creditas_app.png"
+      "assets/images/test.png",
+      "assets/images/test.png"
     ],
     "phishing_examples": [
       "Email: 'Potvrďte přihlášení ke Creditas'",

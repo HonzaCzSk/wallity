@@ -33,6 +33,7 @@ flutter:
     - assets/images/ab.png
     - assets/images/flutter.png
     - assets/images/logo.png
+    - assets/images/test.png
 
 
   # fonts:
