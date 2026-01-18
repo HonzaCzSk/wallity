@@ -27,14 +27,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/data/banks.json
-    - assets/images/george_logo.png
-    - assets/images/cs_logo_bg.png
-    - assets/images/kb.png
-    - assets/images/ab.png
-    - assets/images/flutter.png
-    - assets/images/logo.png
-    - assets/images/test.png
-
+    - assets/images/
 
   # fonts:
   #   - family: Schyler
