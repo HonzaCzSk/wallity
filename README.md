@@ -1,44 +1,44 @@
-# Safe Banking App
+# Wallity 🛡️
 
-**Safe Banking** je mobilní aplikace zaměřená na bezpečnost plateb a prevenci podvodů.  
-Pomáhá uživatelům řešit situace se ztracenou nebo odcizenou kartou, podezřelými platbami a phishingovými útoky. Současně nabízí edukativní hru, kde si uživatelé mohou vyzkoušet simulace podvodných útoků a kvízy.
-
----
-
-## Funkce
-
-### 1️⃣ Postupy a kontakty
-
-- Rychlé návody pro situace:
-  - Ztráta nebo krádež karty
-  - Podezřelá platba
-  - Kliknutí na podvodný e-mail nebo zprávu
-- Offline přístup k návodům a kontaktům na banky
-- Přehledný seznam kroků, jak zablokovat kartu a chránit své finance
-
-### 2️⃣ Edukativní hra / kvíz
-
-- Simulace podvodných útoků
-- Otázky a kvízy na téma bezpečnosti plateb
-- Získávání bodů, postupování mezi arénami / světy
-- Hra slouží k zábavnému učení bezpečných návyků
+Wallity je Flutter aplikace zaměřená na ochranu proti finančním podvodům.
+Pomáhá uživatelům rozpoznat phishing, reagovat v krizových situacích
+a budovat správné bezpečnostní návyky.
 
 ---
 
-## Technické informace
+## 🚀 Hlavní funkce
 
-- **Platformy:** Android & iOS  
-- **Framework:** Flutter  
-- **Offline podpora:** data pro postupy jsou dostupná bez připojení k internetu  
-- **Cílová skupina:** mladší lidé a střední věk, obecná veřejnost
+- 📚 Přehled bank a jejich bezpečnostních incidentů
+- 🔎 Vyhledávání a filtrování
+- 🚨 Nouzový režim – postup při podezření na podvod
+- 💳 Informace pro blokaci karty
+- 🎓 Interaktivní bezpečnostní trénink
+- 👶 (Plánováno) Dětský režim s hravými otázkami
 
 ---
 
-## Instalace a spuštění
+## 🧠 Pro koho je aplikace určena
 
-1. Nainstalujte Flutter SDK: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)  
-2. Klonujte repozitář:
+- Pro běžné uživatele bankovních služeb
+- Pro studenty a seniory
+- Pro výuku finanční gramotnosti
+- Pro každého, kdo chce rozpoznat podvod dřív, než přijde o peníze
 
-   ```bash
-   git clone git@github.com:HonzaCzSk/safe_banking.git
-   cd safe_banking
+---
+
+## 🛠 Použité technologie
+
+- Flutter (Material 3)
+- Dart
+- JSON-based offline data
+- Flutter Web podpora
+
+---
+
+## 📦 Instalace
+
+```bash
+git clone https://github.com/HonzaCzSk/wallity.git
+cd wallity-flutter-app
+flutter pub get
+flutter run
