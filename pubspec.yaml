@@ -1,4 +1,4 @@
-name: safe_banking_app
+name: wallity
 description: "A Flutter application providing information about safe banking practices and information about the banks in the country of Czechia."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -13,7 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_launcher_icons: ^0.14.4
   carousel_slider: ^5.1.1
-  url_launcher: ^6.3.0
+  url_launcher: ^6.3.2
   shared_preferences: ^2.1.1
 
 dev_dependencies:
@@ -26,7 +26,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/data/banks.json
+    - assets/data/
     - assets/images/
 
   # fonts:

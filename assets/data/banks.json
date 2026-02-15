@@ -23,9 +23,11 @@
       "Používejte biometriku",
       "Neklikejte na zkrácené odkazy",
       "Pravidelně kontrolujte transakce"
-    ]
+    ],
+    "websiteUrl": "https://www.csas.cz",
+    "cardBlockPhone": "+420 277 207 207",
+    "fraudReportUrl": "https://www.csas.cz/cs/o-nas/bezpecnost-ochrana-dat"
   },
-
   {
     "id": 2,
     "name": "Komerční banka",
@@ -48,9 +50,11 @@
     "recommended_actions": [
       "Nekontaktujte banku přes odkazy z e-mailu",
       "Nastavte si transakční limity"
-    ]
+    ],
+    "websiteUrl": "https://www.kb.cz",
+    "cardBlockPhone": "+420 955 512 230",
+    "fraudReportUrl": "https://www.kb.cz/cs/podpora/bezpecnost/co-delat-pri-podvodu-na-internetu"
   },
-
   {
     "id": 3,
     "name": "ČSOB",
@@ -72,10 +76,12 @@
     ],
     "recommended_actions": [
       "Aktivujte notifikace o pohybech",
-      "Používejte oficiální aplikaci z App Store / Google Play"
-    ]
+      "Používejte oficiální aplikaci"
+    ],
+    "websiteUrl": "https://www.csob.cz",
+    "cardBlockPhone": "+420 495 800 111",
+    "fraudReportUrl": "https://www.csob.cz/v-obraze/blog/clanky/hlaseni-internetovych-podvodu"
   },
-
   {
     "id": 4,
     "name": "Air Bank",
@@ -89,18 +95,20 @@
       "SMS: 'Vaše karta byla pozastavena…'"
     ],
     "common_scams": [
-      "Falešné investiční nabídky vydávající se za Air Bank",
+      "Falešné investiční nabídky",
       "Podvodné aplikace napodobující My Air"
     ],
     "recent_incidents": [
-      "2024 – falešné investiční portály kradoucí přístupy"
+      "2024 – falešné investiční portály"
     ],
     "recommended_actions": [
       "Nikdy neinstalujte APK mimo Google Play",
-      "Ověřujte si investiční nabídky na oficiálním webu"
-    ]
+      "Ověřujte investiční nabídky"
+    ],
+    "websiteUrl": "https://www.airbank.cz",
+    "cardBlockPhone": "+420 547 134 134",
+    "fraudReportUrl": "https://www.airbank.cz/bezpecnost/podvody/"
   },
-
   {
     "id": 5,
     "name": "Raiffeisenbank",
@@ -115,17 +123,19 @@
     ],
     "common_scams": [
       "Podvodné investiční platformy",
-      "Falešné technické podpory RB"
+      "Falešné technické podpory"
     ],
     "recent_incidents": [
       "2024 – phishing na klienty eKonto"
     ],
     "recommended_actions": [
-      "Neposílejte nikomu fotografie občanky",
+      "Neposílejte fotografie občanky",
       "Povolit silné ověřování"
-    ]
+    ],
+    "websiteUrl": "https://www.rb.cz",
+    "cardBlockPhone": "+420 412 446 402",
+    "fraudReportUrl": "https://www.rb.cz/bezpecne-bankovnictvi/phishing"
   },
-
   {
     "id": 6,
     "name": "Fio banka",
@@ -140,7 +150,7 @@
     ],
     "common_scams": [
       "Falešné investiční nabídky",
-      "Podvodné e-shopy zneužívající Fio platby"
+      "Podvodné e-shopy"
     ],
     "recent_incidents": [
       "2023–2024: phishing přes falešné platební brány"
@@ -148,9 +158,11 @@
     "recommended_actions": [
       "Kontrolujte URL platebních bran",
       "Nepřihlašujte se přes veřejné Wi-Fi"
-    ]
+    ],
+    "websiteUrl": "https://www.fio.cz",
+    "cardBlockPhone": "+420 224 346 777",
+    "fraudReportUrl": "https://www.fio.cz/bezpecnost/phishing"
   },
-
   {
     "id": 7,
     "name": "Moneta Money Bank",
@@ -160,94 +172,103 @@
       "assets/images/test.png"
     ],
     "phishing_examples": [
-      "Email: 'Ověřte svou Monetu kliknutím zde…'",
-      "SMS: 'Nepovedená platba – potvrďte…'"
+      "SMS: 'Potvrďte transakci – Moneta…'",
+      "Email: 'Zabezpečení účtu vyžaduje ověření…'"
     ],
     "common_scams": [
-      "Falešné technické podpory",
-      "Podvodné investiční platformy"
+      "Podvodné volání (vishing) se scénářem „bezpečný účet“",
+      "Falešné platební brány"
     ],
     "recent_incidents": [
-      "2024 – útoky přes podvodné call centrum"
+      "2024 – podvody přes falešné SMS"
     ],
     "recommended_actions": [
-      "Nikomu neříkejte autorizační kódy",
-      "Zkontrolujte číslo, ze kterého volají"
-    ]
+      "Nezadávejte kódy z SMS nikomu",
+      "Ověřujte URL adresy a certifikát"
+    ],
+    "websiteUrl": "https://www.moneta.cz",
+    "cardBlockPhone": "+420 224 442 424",
+    "fraudReportUrl": "https://www.moneta.cz/bezpecnost/phishing-a-smishing"
   },
-
   {
     "id": 8,
     "name": "mBank",
-    "rating": "B+",
+    "rating": "A",
     "images": [
       "assets/images/test.png",
       "assets/images/test.png"
     ],
     "phishing_examples": [
-      "Email: 'Vaše mBank vyžaduje zabezpečení'",
-      "SMS: 'Platba čeká na ověření'"
+      "Email: 'Aktualizujte údaje v internetovém bankovnictví…'",
+      "SMS: 'Zablokujte odchozí transakce – klikněte…'"
     ],
     "common_scams": [
-      "Phishing přes falešné e-shopy",
-      "Podvodné investiční reklamy"
+      "Phishing stránky napodobující přihlášení",
+      "Smishing přes SMS"
     ],
     "recent_incidents": [
-      "2024 – podvody přes marketplace"
+      "2024 – kampaně smishing + phishing"
     ],
     "recommended_actions": [
-      "Ověřujte e-shopy",
-      "Kontrolujte historii přihlášení"
-    ]
+      "Nezadávejte přihlašovací údaje přes odkazy",
+      "Používejte jen oficiální aplikaci"
+    ],
+    "websiteUrl": "https://www.mbank.cz",
+    "cardBlockPhone": "+420 222 111 999",
+    "fraudReportUrl": "https://www.mbank.cz/o-nas/bezpecnost/klient/phishing/"
   },
-
   {
     "id": 9,
     "name": "UniCredit Bank",
-    "rating": "A-",
+    "rating": "A",
     "images": [
       "assets/images/test.png",
       "assets/images/test.png"
     ],
     "phishing_examples": [
-      "SMS: 'Váš účet byl pozastaven…'",
-      "Email: 'Nutné ověření UCB účtu'"
+      "Email: 'Neobvyklá aktivita – ověřte účet…'",
+      "SMS: 'Nutné ověření transakce – klikněte…'"
     ],
     "common_scams": [
-      "Technická podpora vydávající se za UCB",
-      "Podvodné investiční platformy"
+      "Smishing (podvodné SMS)",
+      "Vishing (telefonáty vydávající se za banku)"
     ],
     "recent_incidents": [
-      "2024 – falešné bankovní aplikace"
+      "2024–2025: vlny smishing kampaní"
     ],
     "recommended_actions": [
-      "Stahujte aplikace jen z oficiálních storů",
-      "Nikdy nesdílejte přístupové údaje"
-    ]
+      "Ověřujte doménu webu",
+      "Neinstalujte vzdálenou správu na žádost volajícího"
+    ],
+    "websiteUrl": "https://www.unicreditbank.cz",
+    "cardBlockPhone": "+420 221 210 031",
+    "fraudReportUrl": "https://www.unicreditbank.cz/cs/obcane/digital/bezpecnost.html"
   },
-
   {
     "id": 10,
     "name": "Creditas",
-    "rating": "A-",
+    "rating": "A",
     "images": [
       "assets/images/test.png",
       "assets/images/test.png"
     ],
     "phishing_examples": [
-      "Email: 'Potvrďte přihlášení ke Creditas'",
-      "SMS: 'Creditas Security: váš účet vyžaduje ověření'"
+      "Email: 'Ověření účtu – potvrďte přihlášení…'",
+      "SMS: 'Zablokování karty – potvrďte zde…'"
     ],
     "common_scams": [
-      "Podvodné nabídky investic",
-      "Falešné přihlášení přes odkaz"
+      "Falešné reklamy ve vyhledávání",
+      "Falešné e-shopy a platební brány"
     ],
     "recent_incidents": [
-      "2024 – phishing přes falešné portály"
+      "2023–2025: růst investičních a reklamních podvodů"
     ],
     "recommended_actions": [
-      "Nepoužívejte stejné heslo jako jinde",
-      "Kontrolujte podezřelé zprávy"
-    ]
+      "Nezadávejte údaje na stránkách z reklamy",
+      "Používejte uložený odkaz na oficiální web"
+    ],
+    "websiteUrl": "https://www.creditas.cz",
+    "cardBlockPhone": "+420 583 037 088",
+    "fraudReportUrl": "https://www.creditas.cz/bezpecnost"
   }
 ]

@@ -176,21 +176,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: const Icon(Icons.filter_list, color: Colors.white),
                 dropdownColor: Colors.white,
                 padding: const EdgeInsets.only(right: 12),
-                items: [
-                  const DropdownMenuItem(
+                items: const [
+                  DropdownMenuItem(
                     value: "none",
                     child: Text("Bez řazení"),
                   ),
-                  const DropdownMenuItem(value: "name_asc", child: Text("A–Z")),
-                  const DropdownMenuItem(
+                  DropdownMenuItem(value: "name_asc", child: Text("A–Z")),
+                  DropdownMenuItem(
                     value: "name_desc",
                     child: Text("Z–A"),
                   ),
-                  const DropdownMenuItem(
+                  DropdownMenuItem(
                     value: "rating_best",
                     child: Text("Nejlepší rating"),
                   ),
-                  const DropdownMenuItem(
+                  DropdownMenuItem(
                     value: "rating_worst",
                     child: Text("Nejhorší rating"),
                   ),

@@ -1,0 +1,87 @@
+[
+  {
+    "id": "n01",
+    "prompt": "Přišel e-mail: „Banka zablokovala účet, potvrďte přihlášení přes odkaz.“ Co je správně?",
+    "choices": [
+      "Kliknout na odkaz a přihlásit se",
+      "Otevřít bankovní aplikaci nebo zadat web ručně",
+      "Odpovědět e-mailem a poslat údaje"
+    ],
+    "correctIndex": 1,
+    "explanation": "Odkazy v e-mailu mohou vést na podvodnou stránku. Banku řeš přes oficiální kanály.",
+    "difficulty": 1
+  },
+  {
+    "id": "n02",
+    "prompt": "Někdo po telefonu chce autorizační kód z SMS. Co uděláš?",
+    "choices": [
+      "Kód řeknu, aby to banka ověřila",
+      "Kód nikdy neříkám, hovor ukončím a zavolám bance na oficiální číslo",
+      "Pošlu screenshot SMS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Autorizační kód je klíč k účtu. Banka ho po telefonu nevyžaduje.",
+    "difficulty": 1
+  },
+  {
+    "id": "n03",
+    "prompt": "SMS tvrdí: „Doručení balíku selhalo, doplaťte 39 Kč zde…“ Co je nejlepší postup?",
+    "choices": [
+      "Kliknout na odkaz a zaplatit",
+      "Ověřit zásilku v oficiální aplikaci dopravce / zadat web ručně",
+      "Zadat údaje z karty a pak to řešit"
+    ],
+    "correctIndex": 1,
+    "explanation": "Typický scam. Ověřuj jen přes oficiální aplikaci nebo web napsaný ručně.",
+    "difficulty": 2
+  },
+  {
+    "id": "n04",
+    "prompt": "E-mail vypadá jako od banky, ale adresa odesílatele je divná a text tlačí na rychlé jednání. Co je nejlepší?",
+    "choices": [
+      "Hned jednat, ať nepřijdu o peníze",
+      "Otevřít bankovní aplikaci a zkontrolovat, jestli je problém skutečný",
+      "Přeposlat e-mail známým"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nátlak a divná adresa jsou typické znaky podvodu. Vždy ověřuj přes oficiální kanály.",
+    "difficulty": 2
+  }
+  ,
+  {
+    "id": "n05",
+    "prompt": "Zavolá „banka“ a tvrdí, že musíte peníze převést na „bezpečný účet“, jinak o ně přijdete. Co je správně?",
+    "choices": [
+      "Převést peníze hned, ať jsou v bezpečí",
+      "Hovor ukončit a zavolat zpět na oficiální číslo banky",
+      "Požádat volajícího o více času"
+    ],
+    "correctIndex": 1,
+    "explanation": "„Bezpečný účet“ je typický podvod. Vždy ověřuj přes oficiální kontakt banky.",
+    "difficulty": 2
+  },
+  {
+    "id": "n06",
+    "prompt": "E-mail tvrdí, že máte doplatit malou částku a chce údaje z karty. Co je nejlepší postup?",
+    "choices": [
+      "Zadat kartu, je to jen pár korun",
+      "Nezadávat kartu a ověřit službu přes oficiální web/app",
+      "Poslat údaje přes chat"
+    ],
+    "correctIndex": 1,
+    "explanation": "Scammeři často chtějí malou platbu, aby získali údaje karty. Ověřuj jen oficiálně.",
+    "difficulty": 2
+  },
+  {
+    "id": "n07",
+    "prompt": "Na webu se objeví okno: „Zařízení je infikované, stáhněte si tento program.“ Co uděláš?",
+    "choices": [
+      "Stáhnu program",
+      "Zavřu stránku a případně spustím kontrolu přes svůj ověřený antivirus",
+      "Zavolám na číslo v okně"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pop-up okna často lžou. Nestahuj nic z neznámých stránek a nevolej čísla z reklamy.",
+    "difficulty": 2
+  }
+]

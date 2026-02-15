@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:safe_banking_app/screens/home_page.dart';
+import 'theme/app_theme.dart';
+import 'screens/home_page.dart';
 
 void main() {
-  runApp(const SafeBankingApp());
+  runApp(const WallityApp());
 }
 
-class SafeBankingApp extends StatelessWidget {
-  const SafeBankingApp({super.key});
+class WallityApp extends StatelessWidget {
+  const WallityApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Safe Banking',
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-        brightness: Brightness.light,
-      ),
+      title: 'Wallity',
+      theme: AppTheme.light(),
       home: const HomePage(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }

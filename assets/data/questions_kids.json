@@ -1,0 +1,130 @@
+[
+  {
+    "id": "k01",
+    "prompt": "Co je silné heslo?",
+    "choices": [
+      "123456",
+      "moje jméno",
+      "heslo",
+      "K4m!n3k_98"
+    ],
+    "correctIndex": 3,
+    "explanation": "Silné heslo je dlouhé a obsahuje velká i malá písmena, čísla a speciální znaky.",
+    "difficulty": 1
+  },
+  {
+    "id": "k02",
+    "prompt": "Co uděláš, když tě někdo na internetu požádá o osobní údaje?",
+    "choices": [
+      "Hned mu je poslat",
+      "Zeptat se kamaráda",
+      "Počkat a říct to dospělému",
+      "Napsat je do komentáře"
+    ],
+    "correctIndex": 2,
+    "explanation": "Osobní údaje jsou citlivé. Když si nejsi jistý/á, řekni to dospělému a nic neposílej.",
+    "difficulty": 1
+  },
+  {
+    "id": "k03",
+    "prompt": "Co znamená, když má webová stránka v adrese „https://“?",
+    "choices": [
+      "Je barevná",
+      "Je rychlejší",
+      "Je zabezpečená",
+      "Je zdarma"
+    ],
+    "correctIndex": 2,
+    "explanation": "HTTPS znamená, že spojení je šifrované. Pořád ale kontroluj, jestli je to správný web.",
+    "difficulty": 2
+  },
+  {
+    "id": "k04",
+    "prompt": "Co bys měl/a udělat, když ti přijde divný e-mail?",
+    "choices": [
+      "Hned odpovědět",
+      "Kliknout na odkaz",
+      "Smazat nebo nahlásit",
+      "Poslat ho někomu dalšímu"
+    ],
+    "correctIndex": 2,
+    "explanation": "Divné e-maily mohou být podvod. Neklikej na odkazy a raději to smaž nebo nahlas dospělému.",
+    "difficulty": 1
+  },
+  {
+    "id": "k05",
+    "prompt": "Jaké informace je bezpečné sdílet na internetu?",
+    "choices": [
+      "Rodné číslo",
+      "Adresa bydliště",
+      "Číslo platební karty",
+      "Zájmy nebo koníčky"
+    ],
+    "correctIndex": 3,
+    "explanation": "Rodné číslo, adresa i karta jsou citlivé. Koníčky jsou většinou v pohodě.",
+    "difficulty": 1
+  },
+  {
+    "id": "k06",
+    "prompt": "Co je phishing?",
+    "choices": [
+      "Druh počítačové hry",
+      "Snaha získat osobní údaje",
+      "Antivirový program",
+      "Nastavení počítače"
+    ],
+    "correctIndex": 1,
+    "explanation": "Phishing je podvod, kdy se tě někdo snaží nachytat a získat heslo, kód nebo údaje z karty.",
+    "difficulty": 2
+  },
+  {
+    "id": "k07",
+    "prompt": "Co dělat, když ztratíš platební kartu?",
+    "choices": [
+      "Nic, ona se najde",
+      "Půjčit si jinou",
+      "Zablokovat kartu",
+      "Napsat o tom na sociální sítě"
+    ],
+    "correctIndex": 2,
+    "explanation": "Když kartu ztratíš, je potřeba ji hned zablokovat. Pak to řeš s bankou nebo dospělým.",
+    "difficulty": 1
+  }
+  ,
+  {
+    "id": "k08",
+    "prompt": "Kamarád ti pošle odkaz a píše: „Klikni, je to sranda!“ Co uděláš?",
+    "choices": [
+      "Kliknu hned",
+      "Nejprve se zeptám, co to je, a když si nejsem jistý/á, neklikám",
+      "Pošlu odkaz všem"
+    ],
+    "correctIndex": 1,
+    "explanation": "I kamarád může omylem poslat podvodný odkaz. Když si nejsi jistý/á, neklikej.",
+    "difficulty": 2
+  },
+  {
+    "id": "k09",
+    "prompt": "Přijde ti zpráva: „Pošli kód z SMS a vyhraješ.“ Co uděláš?",
+    "choices": [
+      "Kód pošlu",
+      "Kód nikdy nikomu neposílám",
+      "Kód napíšu do komentáře"
+    ],
+    "correctIndex": 1,
+    "explanation": "Kód z SMS je tajný. Kdo ho získá, může se dostat do účtu.",
+    "difficulty": 2
+  },
+  {
+    "id": "k10",
+    "prompt": "Jak poznáš správný web školy/banky?",
+    "choices": [
+      "Je první ve vyhledávání",
+      "Má správnou adresu a neklikám na podezřelé reklamy",
+      "Má hodně barev"
+    ],
+    "correctIndex": 1,
+    "explanation": "Důležitá je správná adresa webu. Raději ji napiš ručně nebo použij oficiální aplikaci.",
+    "difficulty": 2
+  }
+]

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+
+import 'emergency_screen.dart';
 import 'home_screen.dart';
-import 'block_card_screen.dart';
 import 'about_page.dart';
+import 'kids_training_screen.dart';
 import 'security_training_screen.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,7 +15,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xFFF5F9FF),
       appBar: AppBar(
         title: const Text(
-          'Safe Banking',
+          'Wallity',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -44,7 +46,7 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             const Text(
-              'Vítejte v Safe Banking',
+              'Vítejte v Wallity',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
@@ -54,7 +56,38 @@ class HomePage extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, color: Colors.black54),
             ),
-            const SizedBox(height: 32),
+            const SizedBox(height: 24),
+
+            // ✅ Nouzové tlačítko hned nahoře
+            Center(
+              child: SizedBox(
+                width: 280,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    backgroundColor: Colors.redAccent,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const EmergencyScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Nouzový režim',
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 18),
+
+            // Vyhledat banku
             Center(
               child: SizedBox(
                 width: 280,
@@ -71,7 +104,7 @@ class HomePage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (_) =>
-                            HomeScreen(focusSearch: true, initialTab: 0),
+                            const HomeScreen(focusSearch: true, initialTab: 0),
                       ),
                     );
                   },
@@ -83,6 +116,8 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
+
+            // Procházet banky
             Center(
               child: SizedBox(
                 width: 280,
@@ -107,6 +142,8 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
+
+            // Trénink (zkrácené)
             Center(
               child: SizedBox(
                 width: 280,
@@ -125,11 +162,40 @@ class HomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Text('Bezpečnostní výcvik'),
+                  child: const Text('Trénink'),
                 ),
               ),
             ),
             const SizedBox(height: 12),
+
+            // Dětský trénink (lehce zvýrazněný)
+            Center(
+              child: SizedBox(
+                width: 280,
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    side: const BorderSide(color: Color(0xFF7C4DFF)),
+                    backgroundColor: const Color(0x117C4DFF),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const KidsTrainingScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text('Dětský trénink 👶'),
+                ),
+              ),
+            ),
+            const SizedBox(height: 12),
+
+            // O aplikaci
             Center(
               child: SizedBox(
                 width: 280,
@@ -150,36 +216,10 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 12),
-            Center(
-              child: SizedBox(
-                width: 280,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    backgroundColor: Colors.redAccent,
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => const BlockCardScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    'Nahlásit ztrátu / zablokovat kartu',
-                    style: TextStyle(fontSize: 16, color: Colors.white),
-                  ),
-                ),
-              ),
-            ),
+
             const SizedBox(height: 24),
             const Text(
-              '© 2025-26 Safe Banking. Všechna práva vyhrazena.',
+              '© 2025-26 Wallity. Všechna práva vyhrazena.',
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 12, color: Colors.black38),
             ),
