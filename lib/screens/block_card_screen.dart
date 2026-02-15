@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import '../services/banks_loader.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlockCardScreen extends StatefulWidget {
@@ -18,13 +16,7 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
   @override
   void initState() {
     super.initState();
-    _futureBanks = _loadBanks();
-  }
-
-  Future<List<Map<String, dynamic>>> _loadBanks() async {
-    final raw = await rootBundle.loadString('assets/data/banks.json');
-    final decoded = jsonDecode(raw) as List<dynamic>;
-    return decoded.cast<Map<String, dynamic>>();
+    _futureBanks = loadBanks();
   }
 
   Future<void> _openUrl(String url) async {

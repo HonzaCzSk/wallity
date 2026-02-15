@@ -15,8 +15,10 @@ class TrainingScreen extends StatefulWidget {
 }
 
 class _TrainingScreenState extends State<TrainingScreen> {
-  late Future<List<QuizQuestion>> _futureAll;
+  late Future<QuestionsLoadResult> _futureAll;
+
   int _level = 1;
+  bool _fromRemote = false;
 
   List<QuizQuestion> _questions = [];
   bool _loaded = false;
@@ -32,24 +34,24 @@ class _TrainingScreenState extends State<TrainingScreen> {
     _futureAll = loadQuestions(kidsMode: widget.kidsMode);
   }
 
-void _applyLevel(List<QuizQuestion> all, int level) {
-  final filtered = all.where((q) => (q.difficulty == level)).toList();
-  final use = filtered.isNotEmpty ? filtered : all;
+  void _applyLevel(List<QuizQuestion> all, int level) {
+    final filtered = all.where((q) => q.difficulty == level).toList();
+    final use = filtered.isNotEmpty ? filtered : all;
 
-  // ✅ Random pořadí pokaždé
-  final shuffled = List<QuizQuestion>.from(use)..shuffle();
+    // Random pořadí pokaždé
+    final shuffled = List<QuizQuestion>.from(use)..shuffle();
 
-  setState(() {
-    _level = level;
-    _questions = shuffled;
-    _loaded = true;
+    setState(() {
+      _level = level;
+      _questions = shuffled;
+      _loaded = true;
 
-    _index = 0;
-    _score = 0;
-    _answered = false;
-    _selected = null;
-  });
-}
+      _index = 0;
+      _score = 0;
+      _answered = false;
+      _selected = null;
+    });
+  }
 
   void _answer(QuizQuestion q, int picked) {
     if (_answered) return;
@@ -89,9 +91,7 @@ void _applyLevel(List<QuizQuestion> all, int level) {
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
-                setState(() {
-                  _loaded = false; // zpět na výběr levelu
-                });
+                setState(() => _loaded = false);
               },
               child: const Text("Změnit obtížnost"),
             ),
@@ -116,7 +116,7 @@ void _applyLevel(List<QuizQuestion> all, int level) {
   }
 
   Widget _buildLevelPicker(List<QuizQuestion> all) {
-    final title = widget.kidsMode ? "Vyber obtížnost" : "Vyber obtížnost";
+    final title = "Vyber obtížnost";
     final easy = widget.kidsMode ? "Lehké 😊" : "Lehké";
     final hard = widget.kidsMode ? "Těžší 😈" : "Těžší";
 
@@ -134,8 +134,13 @@ void _applyLevel(List<QuizQuestion> all, int level) {
                 : "Zvol si obtížnost. Otázky se filtrují podle levelu.",
             style: const TextStyle(color: Colors.black54),
           ),
-          const SizedBox(height: 20),
-
+          const SizedBox(height: 12),
+          Text(
+            "Načteno: ${_fromRemote ? "online" : "offline"}",
+            textAlign: TextAlign.right,
+            style: const TextStyle(fontSize: 12, color: Colors.black54),
+          ),
+          const SizedBox(height: 18),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -153,7 +158,6 @@ void _applyLevel(List<QuizQuestion> all, int level) {
             onPressed: () => _applyLevel(all, 2),
             child: Text(hard),
           ),
-
           const SizedBox(height: 16),
           Text(
             widget.kidsMode
@@ -172,7 +176,7 @@ void _applyLevel(List<QuizQuestion> all, int level) {
       appBar: AppBar(
         title: Text(widget.kidsMode ? "Dětský trénink" : "Bezpečnostní výcvik"),
       ),
-      body: FutureBuilder<List<QuizQuestion>>(
+      body: FutureBuilder<QuestionsLoadResult>(
         future: _futureAll,
         builder: (context, snap) {
           if (snap.connectionState != ConnectionState.done) {
@@ -182,12 +186,14 @@ void _applyLevel(List<QuizQuestion> all, int level) {
             return Center(child: Text("Chyba: ${snap.error}"));
           }
 
-          final all = snap.data ?? [];
+          final result = snap.data;
+          final all = result?.questions ?? [];
+          _fromRemote = result?.fromRemote ?? false;
+
           if (all.isEmpty) {
             return const Center(child: Text("Žádné otázky."));
           }
 
-          // Level picker
           if (!_loaded) {
             return _buildLevelPicker(all);
           }
@@ -200,41 +206,34 @@ void _applyLevel(List<QuizQuestion> all, int level) {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                // ✅ Score + progress bar
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Level: $_level",
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
-                    Text(
-                      "Skóre: $_score / $total",
-                      style: Theme.of(context).textTheme.titleMedium,
-                    ),
+                    Text("Level: $_level", style: Theme.of(context).textTheme.titleMedium),
+                    Text("Skóre: $_score / $total",
+                        style: Theme.of(context).textTheme.titleMedium),
                   ],
                 ),
                 const SizedBox(height: 8),
                 LinearProgressIndicator(value: (_index + 1) / total),
-                const SizedBox(height: 10),
+                const SizedBox(height: 6),
+                Text(
+                  "Načteno: ${_fromRemote ? "online" : "offline"}",
+                  textAlign: TextAlign.right,
+                  style: const TextStyle(fontSize: 12, color: Colors.black54),
+                ),
 
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        _loaded = false;
-                      });
-                    },
+                    onPressed: () => setState(() => _loaded = false),
                     child: const Text("Změnit obtížnost"),
                   ),
                 ),
 
                 const SizedBox(height: 6),
-                Text(
-                  "Otázka ${_index + 1}/$total",
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
+                Text("Otázka ${_index + 1}/$total",
+                    style: Theme.of(context).textTheme.titleMedium),
                 const SizedBox(height: 10),
                 Text(q.prompt, style: Theme.of(context).textTheme.titleLarge),
                 const SizedBox(height: 16),

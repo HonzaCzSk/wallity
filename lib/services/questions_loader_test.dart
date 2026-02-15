@@ -6,12 +6,13 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   test('Loads kids questions without crashing', () async {
-    final q = await loadQuestions(kidsMode: true);
-    expect(q.isNotEmpty, true);
+    final result = await loadQuestions(kidsMode: true);
+    expect(result.questions.isNotEmpty, true);
+    // fromRemote může být true/false podle připojení, netestujeme.
   });
 
   test('Loads normal questions without crashing', () async {
-    final q = await loadQuestions(kidsMode: false);
-    expect(q.isNotEmpty, true);
+    final result = await loadQuestions(kidsMode: false);
+    expect(result.questions.isNotEmpty, true);
   });
 }

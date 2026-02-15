@@ -1,15 +1,47 @@
 import 'package:flutter/material.dart';
+import '../widgets/panic_shell.dart';
 
 class ReportScamScreen extends StatelessWidget {
   const ReportScamScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Nahlásit podvod"),
+Future<bool> _confirmLeave(BuildContext context) async {
+  final res = await showDialog<bool>(
+    context: context,
+    barrierDismissible: true,
+    builder: (ctx) => AlertDialog(
+      title: const Text('Opravdu chcete odejít?'),
+      content: const Text(
+        'Jste v krizovém režimu. Odchod může zpomalit řešení situace.',
       ),
-      body: const SingleChildScrollView(
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(ctx).pop(false),
+          child: const Text('Zůstat'),
+        ),
+        ElevatedButton(
+          onPressed: () => Navigator.of(ctx).pop(true),
+          child: const Text('Odejít'),
+        ),
+      ],
+    ),
+  );
+  return res ?? false;
+}
+
+@override
+Widget build(BuildContext context) {
+  return PopScope(
+    canPop: false,
+    // ignore: deprecated_member_use
+    onPopInvoked: (didPop) async {
+      if (didPop) return;
+      final leave = await _confirmLeave(context);
+      if (!context.mounted) return;
+      if (leave) Navigator.of(context).pop();
+    },
+    child: const PanicShell(
+      title: 'Postup při podvodu',
+      child: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,7 +71,6 @@ class ReportScamScreen extends StatelessWidget {
             ),
             SizedBox(height: 8),
             Text("• Datum a čas incidentu."),
-            Text("• Číslo účtu / karty (nikdy nesdělujte celé číslo veřejně)."),
             Text("• Screenshoty komunikace."),
             Text("• Částku, která byla odcizena."),
             SizedBox(height: 16),
@@ -55,6 +86,7 @@ class ReportScamScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ),
+  );
   }
 }
