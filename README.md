@@ -10,7 +10,7 @@ Pomáhá uživatelům rozpoznat phishing, reagovat v krizových situacích a bud
 ## Funkce
 
 | Funkce | Popis |
-|---|---|
+| --- | --- |
 | Přehled bank | Oficiální kontakty a bezpečnostní informace |
 | Vyhledávání | Filtrování bank a incidentů |
 | Nouzový režim | Krok za krokem při podezření na podvod |
