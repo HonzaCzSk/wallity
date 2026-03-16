@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
+import '../utils/seo.dart';
 import '../widgets/panic_shell.dart';
 
-class ReportScamScreen extends StatelessWidget {
+class ReportScamScreen extends StatefulWidget {
   const ReportScamScreen({super.key});
+  @override
+  State<ReportScamScreen> createState() => _ReportScamScreenState();
+}
+
+class _ReportScamScreenState extends State<ReportScamScreen> {
+  @override
+  void initState() {
+    super.initState();
+    SeoHelper.set(
+      title: 'Postup při podvodu – Wallity',
+      description: 'Jak nahlásit podvod, koho kontaktovat a co si připravit pro banku nebo policii.',
+    );
+  }
 
 Future<bool> _confirmLeave(BuildContext context) async {
   final res = await showDialog<bool>(

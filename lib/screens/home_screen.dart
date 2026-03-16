@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../models/bank.dart';
 import '../widgets/bank_card.dart';
+import '../utils/seo.dart';
 import 'bank_info_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -103,6 +104,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
+    SeoHelper.set(
+      title: 'Banky – Wallity',
+      description: 'Vyhledejte banku, zjistěte kontakty a bezpečnostní informace.',
+    );
     _searchFocusNode = FocusNode();
     _searchController = TextEditingController();
     loadBanks();

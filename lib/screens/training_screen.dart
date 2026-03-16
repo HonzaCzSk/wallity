@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../models/quiz_question.dart';
 import '../services/questions_loader.dart';
+import '../utils/seo.dart';
 
 class TrainingScreen extends StatefulWidget {
   final bool kidsMode;
@@ -31,6 +32,10 @@ class _TrainingScreenState extends State<TrainingScreen> {
   @override
   void initState() {
     super.initState();
+    SeoHelper.set(
+      title: 'Bezpečnostní trénink – Wallity',
+      description: 'Interaktivní kvízy pro rozpoznání phishingu a finančních podvodů.',
+    );
     _futureAll = loadQuestions(kidsMode: widget.kidsMode);
   }
 

@@ -1,8 +1,22 @@
 import 'package:flutter/material.dart';
+import '../utils/seo.dart';
 import 'panic_scenario_screen.dart';
 
-class EmergencyScreen extends StatelessWidget {
+class EmergencyScreen extends StatefulWidget {
   const EmergencyScreen({super.key});
+  @override
+  State<EmergencyScreen> createState() => _EmergencyScreenState();
+}
+
+class _EmergencyScreenState extends State<EmergencyScreen> {
+  @override
+  void initState() {
+    super.initState();
+    SeoHelper.set(
+      title: 'Nouzový režim – Wallity',
+      description: 'Vyber situaci a dostaň konkrétní postup: vishing, smishing nebo kompromitace karty.',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {

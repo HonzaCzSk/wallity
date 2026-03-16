@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'emergency_bank_select_screen.dart';
+import '../utils/seo.dart';
 import 'report_scam_screen.dart';
 
 enum PanicScenarioType {
@@ -49,6 +50,10 @@ class _PanicScenarioScreenState extends State<PanicScenarioScreen> {
   @override
   void initState() {
     super.initState();
+    SeoHelper.set(
+      title: 'Nouzový postup – Wallity',
+      description: 'Krizový postup při vishingu, smishingu nebo kompromitaci karty.',
+    );
     cfg = _configFor(widget.scenario);
     checked = List<bool>.filled(cfg.doNow.length, false);
   }

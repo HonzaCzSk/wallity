@@ -3,6 +3,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../config/remote_config.dart';
+import '../utils/seo.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
@@ -18,6 +19,10 @@ class _AboutPageState extends State<AboutPage> {
   @override
   void initState() {
     super.initState();
+    SeoHelper.set(
+      title: 'O aplikaci – Wallity',
+      description: 'Informace o aplikaci Wallity, verze, zdroj dat a důležitá upozornění.',
+    );
     _loadPackageInfo();
   }
 

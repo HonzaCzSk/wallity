@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../services/banks_loader.dart';
+import '../utils/seo.dart';
 import '../widgets/panic_shell.dart';
 
 class EmergencyBankSelectScreen extends StatefulWidget {
@@ -45,6 +46,10 @@ Future<bool> _confirmLeave() async {
   @override
   void initState() {
     super.initState();
+    SeoHelper.set(
+      title: 'Kontaktovat banku – Nouzový režim – Wallity',
+      description: 'Krizový režim: vyberte banku a jednejte okamžitě.',
+    );
     _futureBanks = loadBanks();
   }
 

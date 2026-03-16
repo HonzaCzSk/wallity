@@ -1,11 +1,11 @@
 {
-    "name": "safe_banking_app",
-    "short_name": "safe_banking_app",
+    "name": "Wallity",
+    "short_name": "Wallity",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "theme_color": "#0A0A50",
+    "background_color": "#0A0A50",
+    "description": "Wallity is a ",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/banks_loader.dart';
+import '../utils/seo.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlockCardScreen extends StatefulWidget {
@@ -16,6 +17,10 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
   @override
   void initState() {
     super.initState();
+    SeoHelper.set(
+      title: 'Zablokovat kartu – Wallity',
+      description: 'Rychlý přístup k číslům pro zablokování platební karty u všech bank.',
+    );
     _futureBanks = loadBanks();
   }
 

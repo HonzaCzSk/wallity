@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
 import '../models/bank.dart';
+import '../utils/seo.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class BankDetailScreen extends StatelessWidget {
+class BankDetailScreen extends StatefulWidget {
   final Bank bank;
 
   const BankDetailScreen({super.key, required this.bank});
+
+  @override
+  State<BankDetailScreen> createState() => _BankDetailScreenState();
+}
+
+class _BankDetailScreenState extends State<BankDetailScreen> {
+  Bank get bank => widget.bank;
+
+  @override
+  void initState() {
+    super.initState();
+    SeoHelper.set(
+      title: '\${widget.bank.name} – Wallity',
+      description: 'Bezpečnostní informace, kontakty a přehled podvodů pro \${widget.bank.name}.',
+    );
+  }
 
   Color getRatingColor(String r) {
     switch (r) {

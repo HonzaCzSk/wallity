@@ -1,13 +1,27 @@
 import 'package:flutter/material.dart';
 
 import 'emergency_screen.dart';
+import '../utils/seo.dart';
 import 'home_screen.dart';
 import 'about_page.dart';
 import 'kids_training_screen.dart';
 import 'security_training_screen.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    SeoHelper.set(
+      title: 'Wallity – Ochrana před finančními podvody',
+      description: 'Rozpoznej podvod, zablokuj kartu a jednej správně. Offline aplikace s kontakty bank.',
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
