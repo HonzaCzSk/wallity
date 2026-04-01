@@ -56,14 +56,10 @@ class _AboutPageState extends State<AboutPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Text(
-              "Wallity",
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-            ),
+            const Text("Wallity", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
             const Text(
-              "Mobilní aplikace ve Flutteru, která pomáhá uživatelům zranitelným vůči online podvodům. "
-              "Najdete zde rychlé a oficiální kontakty bank a trénink bezpečného chování.",
+              "Offline průvodce bezpečností: rychlé kontakty bank, nouzové kroky a krátké tréninky proti podvodům.",
               style: TextStyle(color: Colors.black54),
             ),
             const SizedBox(height: 16),
@@ -87,20 +83,25 @@ class _AboutPageState extends State<AboutPage> {
               ),
             ),
 
-            const Card(
+            Card(
               child: Padding(
-                padding: EdgeInsets.all(14),
+                padding: const EdgeInsets.all(14),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Zdroj dat", style: TextStyle(fontWeight: FontWeight.bold)),
-                    SizedBox(height: 8),
-                    Text("Online data: ${RemoteConfig.baseDataUrl}"),
-                    SizedBox(height: 6),
-                    Text(
-                      "Aplikace se nejdřív pokusí načíst data online. Pokud to nejde (např. bez internetu), "
-                      "automaticky použije offline data zabalená v aplikaci.",
+                    const Text("Jak to funguje", style: TextStyle(fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 8),
+                    const Text(
+                      "Aplikace funguje offline. Když je internet k dispozici, může si stáhnout novější data (např. otázky a databázi bank).",
                       style: TextStyle(color: Colors.black54),
+                    ),
+                    const SizedBox(height: 12),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: const Icon(Icons.cloud_download_outlined),
+                      title: const Text("Online data"),
+                      subtitle: const Text(RemoteConfig.baseDataUrl),
+                      onTap: () => _openUrl(RemoteConfig.baseDataUrl),
                     ),
                   ],
                 ),
@@ -134,7 +135,7 @@ class _AboutPageState extends State<AboutPage> {
             ),
             const SizedBox(height: 10),
             OutlinedButton(
-              onPressed: () => _openUrl("https://github.com/HonzaCzSk/wallity-flutter-app"),
+              onPressed: () => _openUrl("https://github.com/HonzaCzSk/wallity"),
               child: const Text("GitHub repozitář"),
             ),
 

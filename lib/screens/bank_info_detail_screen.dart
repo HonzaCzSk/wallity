@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/bank.dart';
 import '../utils/seo.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import '../widgets/bank_logo.dart';
 
 class BankDetailScreen extends StatefulWidget {
   final Bank bank;
@@ -24,18 +24,25 @@ class _BankDetailScreenState extends State<BankDetailScreen> {
     );
   }
 
-  Color getRatingColor(String r) {
-    switch (r) {
-      case "A":
-        return Colors.green;
-      case "B":
-        return Colors.blue;
-      case "C":
-        return Colors.orange;
-      case "D":
-        return Colors.red;
+  ({Color color, IconData icon, String label}) safetyBadgeFor(String rating) {
+    // Keep mapping intentionally simple and user-focused.
+    switch (rating) {
+      case 'A+':
+      case 'A':
+      case 'A-':
+        return (color: Colors.green, icon: Icons.verified_user, label: 'Vysoká bezpečnost');
+      case 'B+':
+      case 'B':
+      case 'B-':
+        return (color: Colors.blue, icon: Icons.shield_outlined, label: 'Dobrá bezpečnost');
+      case 'C+':
+      case 'C':
+      case 'C-':
+        return (color: Colors.orange, icon: Icons.report_outlined, label: 'Pozor');
+      case 'D':
+        return (color: Colors.red, icon: Icons.dangerous_outlined, label: 'Vysoké riziko');
       default:
-        return Colors.black;
+        return (color: Colors.black54, icon: Icons.help_outline, label: 'Neznámé');
     }
   }
 
@@ -43,82 +50,64 @@ class _BankDetailScreenState extends State<BankDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF5F9FF),
-      appBar: AppBar(title: Text(bank.name), centerTitle: true),
+      appBar: AppBar(
+        title: Row(
+          children: [
+            BankLogo(
+              name: bank.name,
+              assetPath: bank.logoAsset,
+              imageUrl: bank.logoUrl,
+              websiteUrl: bank.websiteUrl,
+              size: 28,
+            ),
+            const SizedBox(width: 10),
+            Expanded(child: Text(bank.name, overflow: TextOverflow.ellipsis)),
+          ],
+        ),
+        // Keep the system back button (leading) intact.
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Center(
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              decoration: BoxDecoration(
-                color: getRatingColor(bank.rating),
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Text(
-                "Rating: ${bank.rating}",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          if (bank.images.isNotEmpty)
-            CarouselSlider(
-              items: bank.images.map((img) {
-                return Builder(
-                  builder: (context) {
-                    final mq = MediaQuery.of(context);
-                    final int cacheW = (mq.size.width * mq.devicePixelRatio)
-                        .toInt();
-
-                    return GestureDetector(
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => Dialog(
-                            insetPadding: const EdgeInsets.all(8),
-                            child: InteractiveViewer(
-                              panEnabled: true,
-                              clipBehavior: Clip.none,
-                              child: AspectRatio(
-                                aspectRatio: 16 / 9,
-                                child: Image.asset(
-                                  img,
-                                  fit: BoxFit.contain,
-                                  cacheWidth: cacheW,
-                                ),
+          Builder(
+            builder: (context) {
+              final badge = safetyBadgeFor(bank.rating);
+              return Card(
+                elevation: 0,
+                color: badge.color.withValues(alpha: 0.10),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                  child: Row(
+                    children: [
+                      Icon(badge.icon, color: badge.color),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              badge.label,
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                color: badge.color,
+                                fontSize: 16,
                               ),
                             ),
-                          ),
-                        );
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(16),
-                        child: SizedBox(
-                          height: 180,
-                          width: double.infinity,
-                          child: Image.asset(
-                            img,
-                            fit: BoxFit.cover,
-                            cacheWidth: cacheW,
-                          ),
+                            const SizedBox(height: 2),
+                            Text(
+                              'Hodnocení: ${bank.rating}',
+                              style: const TextStyle(color: Colors.black54),
+                            ),
+                          ],
                         ),
                       ),
-                    );
-                  },
-                );
-              }).toList(),
-              options: CarouselOptions(
-                height: 180,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                viewportFraction: 0.92,
-              ),
-            ),
-
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
           const SizedBox(height: 20),
           // Sections
           buildSection("Podvodné SMS / Email", bank.phishingExamples),

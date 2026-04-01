@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/bank.dart';
+import 'bank_logo.dart';
 
 class BankCard extends StatelessWidget {
   final Bank bank;
@@ -27,6 +28,14 @@ class BankCard extends StatelessWidget {
           ),
           child: Row(
             children: [
+              BankLogo(
+                name: bank.name,
+                assetPath: bank.logoAsset,
+                imageUrl: bank.logoUrl,
+                websiteUrl: bank.websiteUrl,
+                size: 44,
+              ),
+              const SizedBox(width: 12),
               Expanded(
                 child: Text(
                   bank.name,

@@ -126,5 +126,187 @@
     "correctIndex": 1,
     "explanation": "Důležitá je správná adresa webu. Raději ji napiš ručně nebo použij oficiální aplikaci.",
     "difficulty": 2
+  },
+  {
+    "id": "k11",
+    "prompt": "Co uděláš, když ti někdo napíše: „Pošli mi fotku karty, jen na chvilku“?",
+    "choices": [
+      "Pošlu mu ji",
+      "Nepošlu ji a řeknu to dospělému",
+      "Dám ji do komentáře"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fotka karty je citlivá. Nikdy ji neposílej a vždy to řekni dospělému.",
+    "difficulty": 1
+  },
+  {
+    "id": "k12",
+    "prompt": "Jak se chováš k heslu?",
+    "choices": [
+      "Řeknu ho kamarádovi",
+      "Napíšu ho na papír a nechám ho ve třídě",
+      "Heslo si nechám pro sebe a mám ho silné",
+      "Dám ho do veřejného chatu"
+    ],
+    "correctIndex": 2,
+    "explanation": "Heslo je tajné. Silné heslo chrání účet a neměl/a bys ho nikomu říkat.",
+    "difficulty": 1
+  },
+  {
+    "id": "k13",
+    "prompt": "Zpráva říká: „Vyhrál/a jsi telefon! Klikni tady.“ Co je nejlepší?",
+    "choices": [
+      "Kliknout hned",
+      "Nejprve se poradit s dospělým a neklikat na podezřelé odkazy",
+      "Poslat zprávu všem"
+    ],
+    "correctIndex": 1,
+    "explanation": "Výhry a dárky bývají trik. Když si nejsi jistý/á, neklikej a řekni to dospělému.",
+    "difficulty": 1
+  },
+  {
+    "id": "k14",
+    "prompt": "Co uděláš, když najdeš cizí platební kartu?",
+    "choices": [
+      "Zkusím s ní něco koupit",
+      "Nechám si ji",
+      "Odevzdám ji dospělému nebo na bezpečné místo (např. policie/recepce)",
+      "Vyfotím ji a dám na internet"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cizí karta není hračka. Odevzdej ji dospělému nebo na bezpečné místo.",
+    "difficulty": 1
+  },
+  {
+    "id": "k15",
+    "prompt": "Když máš telefon, je dobré mít…",
+    "choices": [
+      "Žádný zámek, ať se rychle odemkne",
+      "PIN/otisk prstu a zamykání obrazovky",
+      "Heslo napsané na nálepce na telefonu"
+    ],
+    "correctIndex": 1,
+    "explanation": "Zámek obrazovky chrání tvoje účty a zprávy, když telefon ztratíš.",
+    "difficulty": 1
+  },
+  {
+    "id": "k16",
+    "prompt": "Co uděláš, když ti někdo pošle „ověřovací kód“ a chce, abys ho přeposlal/a?",
+    "choices": [
+      "Přepošlu ho",
+      "Nikdy ho neposílám a řeknu to dospělému",
+      "Napíšu ho do komentáře"
+    ],
+    "correctIndex": 1,
+    "explanation": "Kódy jsou tajné. Kdo je získá, může se přihlásit do účtu.",
+    "difficulty": 2
+  },
+  {
+    "id": "k17",
+    "prompt": "Které údaje je nejlepší NIKDY nesdílet?",
+    "choices": [
+      "Číslo karty nebo kód z SMS",
+      "Oblíbený sport",
+      "Koníčky"
+    ],
+    "correctIndex": 0,
+    "explanation": "Číslo karty a kódy jsou citlivé. Koníčky jsou většinou v pohodě.",
+    "difficulty": 1
+  },
+  {
+    "id": "k18",
+    "prompt": "Když ti někdo napíše něco nepříjemného nebo divného, co můžeš udělat?",
+    "choices": [
+      "Odpovědět mu ještě víc",
+      "Zablokovat ho a říct to dospělému",
+      "Poslat mu svoje údaje"
+    ],
+    "correctIndex": 1,
+    "explanation": "Máš právo se chránit. Zablokuj ho a řekni to dospělému.",
+    "difficulty": 1
+  },
+  {
+    "id": "k19",
+    "prompt": "Na tabletu vyskočí okno: „Stáhni si super aplikaci a dostaneš peníze!“ Co uděláš?",
+    "choices": [
+      "Stáhnu ji hned",
+      "Zeptám se dospělého a stahuju jen z oficiálního obchodu",
+      "Napíšu jim svou adresu"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aplikace stahuj jen z oficiálního obchodu a když si nejsi jistý/á, ptej se dospělého.",
+    "difficulty": 2
+  },
+  {
+    "id": "k20",
+    "prompt": "Co je dobré dělat, když někam píšeš jméno a adresu?",
+    "choices": [
+      "Dát je všude, aby tě našli",
+      "Dávat jen tam, kde je to nutné, a vždy s dospělým",
+      "Napsat je do hry do chatu"
+    ],
+    "correctIndex": 1,
+    "explanation": "Osobní údaje dávej jen tam, kde musíš, a ideálně s pomocí dospělého.",
+    "difficulty": 2
+  },
+  {
+    "id": "k21",
+    "prompt": "Když máš podezřelý odkaz, co je nejlepší?",
+    "choices": [
+      "Kliknout a zjistit",
+      "Nechat být a zeptat se dospělého",
+      "Poslat ho dál"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nejlepší je neklikat. Když si nejsi jistý/á, ptej se dospělého.",
+    "difficulty": 1
+  },
+  {
+    "id": "k22",
+    "prompt": "Když někdo říká: „Jsem tvůj kamarád, ale mám nové číslo, pošli mi peníze,“ co uděláš?",
+    "choices": [
+      "Pošlu peníze hned",
+      "Ověřím si to jinak (zavolám kamarádovi/rodiči) a řeknu to dospělému",
+      "Pošlu mu heslo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Někdo se může vydávat za kamaráda. Vždy si to ověř jinou cestou a řekni to dospělému.",
+    "difficulty": 2
+  },
+  {
+    "id": "k23",
+    "prompt": "Kde je lepší zadávat přihlašovací údaje?",
+    "choices": [
+      "Na veřejném počítači, kde jsou všichni",
+      "Na svém zařízení a jen na správné stránce/aplikaci",
+      "V komentářích pod videem"
+    ],
+    "correctIndex": 1,
+    "explanation": "Přihlašovací údaje piš jen na svém zařízení a jen na správném webu nebo v aplikaci.",
+    "difficulty": 2
+  },
+  {
+    "id": "k24",
+    "prompt": "Co znamená, že něco je „tajné“?",
+    "choices": [
+      "Může to vědět každý",
+      "Může to vědět jen ty a lidé, kterým věříš (třeba rodiče)",
+      "Napíšu to všem do skupiny"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tajné věci (hesla, kódy) nepatří do chatu ani na internet.",
+    "difficulty": 1
+  },
+  {
+    "id": "k25",
+    "prompt": "Co uděláš, když ti hra nabízí „zdarma mince“, ale chce, abys vyplnil/a údaje o kartě?",
+    "choices": [
+      "Vyplním je",
+      "Nic nevyplňuji a řeknu to dospělému",
+      "Pošlu tam svůj kód z SMS"
+    ],
+    "correctIndex": 1,
+    "explanation": "„Zdarma“ nabídky často lákají na podvod. Údaje o kartě ani kódy nikam nepiš.",
+    "difficulty": 2
   }
 ]

@@ -83,5 +83,161 @@
     "correctIndex": 1,
     "explanation": "Pop-up okna často lžou. Nestahuj nic z neznámých stránek a nevolej čísla z reklamy.",
     "difficulty": 2
+  },
+  {
+    "id": "n08",
+    "prompt": "Co je nejlepší způsob, jak se přihlásit do internetbankingu z odkazu ve vyhledávači?",
+    "choices": [
+      "Kliknout na první reklamu ve výsledcích",
+      "Zadat adresu banky ručně nebo použít uloženou záložku / oficiální aplikaci",
+      "Kliknout na jakýkoliv odkaz, který vypadá podobně"
+    ],
+    "correctIndex": 1,
+    "explanation": "Útočníci často kupují reklamy a napodobují adresy. Bezpečnější je psát adresu ručně nebo použít aplikaci.",
+    "difficulty": 2
+  },
+  {
+    "id": "n09",
+    "prompt": "Někdo se vydává za podporu banky a chce, abys nainstaloval/a aplikaci pro vzdálenou správu (AnyDesk/TeamViewer). Co uděláš?",
+    "choices": [
+      "Nainstaluji ji a nechám je „opravit“ účet",
+      "Odmítnu, hovor ukončím a ověřím situaci přes oficiální kanály banky",
+      "Pošlu jim fotku občanky, ať si to ověří"
+    ],
+    "correctIndex": 1,
+    "explanation": "Vzdálená správa dává útočníkovi kontrolu nad zařízením. Banka to takto neřeší.",
+    "difficulty": 2
+  },
+  {
+    "id": "n10",
+    "prompt": "Jaké je nejbezpečnější nastavení pro ověření plateb a přihlášení?",
+    "choices": [
+      "Bez ověření, ať je to rychlé",
+      "Dvoufázové ověření (2FA) a biometrie v aplikaci",
+      "Jeden PIN pro všechno"
+    ],
+    "correctIndex": 1,
+    "explanation": "2FA a biometrie výrazně snižují riziko zneužití účtu při úniku hesla.",
+    "difficulty": 1
+  },
+  {
+    "id": "n11",
+    "prompt": "Co uděláš, když ti někdo pošle QR kód s textem „zaplať pokutu hned“?",
+    "choices": [
+      "Naskenuji a zaplatím",
+      "Ověřím požadavek přes oficiální kanály (úřad/dopravce) a zkontroluji údaje příjemce",
+      "Přepošlu QR kód dál"
+    ],
+    "correctIndex": 1,
+    "explanation": "QR platby lze zneužít. Vždy ověřuj kontext a kontroluj příjemce/částku před potvrzením.",
+    "difficulty": 2
+  },
+  {
+    "id": "n12",
+    "prompt": "Připojíš se na veřejnou Wi‑Fi a chceš kontrolovat banku. Co je správně?",
+    "choices": [
+      "Přihlásit se normálně, je to jedno",
+      "Raději použít mobilní data (nebo VPN) a oficiální aplikaci",
+      "Sdílet heslo k Wi‑Fi s ostatními"
+    ],
+    "correctIndex": 1,
+    "explanation": "Veřejné Wi‑Fi mohou být rizikové. Mobilní data (nebo VPN) snižují šanci odposlechu/manipulace.",
+    "difficulty": 2
+  },
+  {
+    "id": "n13",
+    "prompt": "Zaznamenáš platbu, kterou jsi neprovedl/a. Jaký je nejlepší první krok?",
+    "choices": [
+      "Počkat pár dní, třeba zmizí",
+      "Okamžitě zablokovat kartu / přístup a kontaktovat banku přes oficiální podporu",
+      "Napsat o tom na sociální sítě"
+    ],
+    "correctIndex": 1,
+    "explanation": "Čas hraje roli. Rychlá blokace a kontaktování banky může zabránit dalším škodám.",
+    "difficulty": 1
+  },
+  {
+    "id": "n14",
+    "prompt": "Která kombinace je nejbezpečnější pro hesla do banky a e‑mailu?",
+    "choices": [
+      "Jedno heslo všude, ať si ho pamatuju",
+      "Dlouhá unikátní hesla + správce hesel",
+      "Krátká hesla, ale často měněná"
+    ],
+    "correctIndex": 1,
+    "explanation": "Unikátní dlouhá hesla (ideálně ve správci) brání řetězovým únikům napříč službami.",
+    "difficulty": 2
+  },
+  {
+    "id": "n15",
+    "prompt": "Dostaneš zprávu z „WhatsApp podpory banky“ s žádostí o ověřovací kód. Co platí?",
+    "choices": [
+      "Je to OK, WhatsApp je bezpečný",
+      "Je to podezřelé; kód nikdy nikomu neposílej a ověř to přes banku",
+      "Pošlu kód jen jednou"
+    ],
+    "correctIndex": 1,
+    "explanation": "Kódy jsou určené jen pro tebe. Banka je přes chat běžně nechce a útočníci na to spoléhají.",
+    "difficulty": 1
+  },
+  {
+    "id": "n16",
+    "prompt": "Jak poznáš podvodnou doménu (webovou adresu) napodobující banku?",
+    "choices": [
+      "Je úplně stejná jako oficiální doména",
+      "Může mít překlepy, pomlčky navíc nebo jiné koncovky (.com místo .cz)",
+      "Podvodné domény neexistují"
+    ],
+    "correctIndex": 1,
+    "explanation": "Typické jsou drobné odchylky (např. „moje‑banka-secure.com“). Vždy kontroluj přesnou doménu.",
+    "difficulty": 2
+  },
+  {
+    "id": "n17",
+    "prompt": "Na telefonu vyskočí oznámení „Aktualizujte bankovní aplikaci zde“ s odkazem. Co uděláš?",
+    "choices": [
+      "Kliknu na odkaz",
+      "Aktualizuji jen přes oficiální obchod (Google Play / App Store)",
+      "Pošlu odkaz kamarádovi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Falešné aktualizace instalují malware. Aplikace aktualizuj pouze přes oficiální obchod.",
+    "difficulty": 1
+  },
+  {
+    "id": "n18",
+    "prompt": "Zadáváš údaje z karty na webu. Co je dobrý signál bezpečnosti?",
+    "choices": [
+      "Web chce číslo karty i PIN",
+      "Web podporuje 3D Secure ověření a používá důvěryhodnou platební bránu",
+      "Web má hodně bannerů a slev"
+    ],
+    "correctIndex": 1,
+    "explanation": "PIN nikdy nezadávej online. 3D Secure a ověřená brána snižují riziko zneužití.",
+    "difficulty": 2
+  },
+  {
+    "id": "n19",
+    "prompt": "Co je bezpečný postup při „vrácení peněz“ od neznámého prodejce?",
+    "choices": [
+      "Dát jim číslo karty, CVV a kód z SMS, aby poslali refund",
+      "Nikdy neposílat kódy; refund řešit přes oficiální reklamaci / platební bránu / banku",
+      "Poslat fotku obou stran karty"
+    ],
+    "correctIndex": 1,
+    "explanation": "Refund nepotřebuje autorizační kódy ani CVV přes chat. To je typický trik na převod/platbu.",
+    "difficulty": 3
+  },
+  {
+    "id": "n20",
+    "prompt": "Jaký je dobrý návyk pro ochranu bankovních notifikací a SMS kódů?",
+    "choices": [
+      "Mít zamčený telefon (PIN/biometrie) a skrýt citlivé náhledy na zamčené obrazovce",
+      "Nechat telefon bez zámku, ať je rychlý",
+      "Fotit SMS kódy do galerie"
+    ],
+    "correctIndex": 0,
+    "explanation": "Zámek obrazovky a omezení náhledů chrání kódy a notifikace před zneužitím, když telefon ztratíš.",
+    "difficulty": 2
   }
 ]

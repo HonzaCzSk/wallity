@@ -16,7 +16,7 @@ Pomáhá uživatelům rozpoznat phishing, reagovat v krizových situacích a bud
 | Nouzový režim | Krok za krokem při podezření na podvod |
 | Blokace karty | Rychlý přístup k číslu pro zablokování |
 | Bezpečnostní trénink | Interaktivní kvízy a návyky |
-| Dětský režim | *(plánováno)* Hravé otázky pro mladší uživatele |
+| Dětský režim | Hravé otázky pro mladší uživatele |
 
 ---
 
@@ -38,6 +38,17 @@ Pomáhá uživatelům rozpoznat phishing, reagovat v krizových situacích a bud
 
 ---
 
+## PWA (Web)
+
+Wallity lze používat také jako PWA:
+
+- Otevři `wallity.cz` v mobilním prohlížeči
+- Přidej na plochu:
+  - **Android (Chrome)**: menu (⋮) → **Přidat na plochu / Instalovat aplikaci**
+  - **iOS (Safari)**: Sdílet → **Přidat na plochu**
+
+---
+
 ## Vývoj
 
 ### Požadavky
@@ -52,6 +63,12 @@ git clone https://github.com/HonzaCzSk/wallity.git
 cd wallity
 flutter pub get
 flutter run
+```
+
+### Build (Web)
+
+```bash
+flutter build web
 ```
 
 ---

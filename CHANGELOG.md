@@ -6,10 +6,14 @@ Všechny změny jsou dokumentovány zde.
 
 ## [v0.4.0] – připravuje se
 
-### Plánováno
+### Přidáno / změněno
 
-- Dětský režim s hravými otázkami
-- Vylepšení offline databáze bank
+- Bankovní loga v přehledu bank (s lepší kvalitou ikon)
+- Rozšíření kvízu (nové otázky pro dospělé i děti)
+- Úpravy UX pro mobil (řazení bank, návratové tlačítko v detailu)
+- Změna designu hodnocení bank (uživatelsky srozumitelný badge)
+- Odstranění galerie obrázků v detailu banky (bez placeholderů)
+- Oprava web SEO helperu (bez deprecated `dart:html`)
 
 ---
 

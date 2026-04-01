@@ -1,11 +1,10 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
+import 'package:web/web.dart' as web;
 
 class SeoHelper {
   static void set({required String title, required String description}) {
-    html.document.title = title;
+    web.document.title = title;
 
-    final meta = html.document.querySelector('meta[name="description"]');
+    final meta = web.document.querySelector('meta[name="description"]');
     if (meta != null) {
       meta.setAttribute('content', description);
     }

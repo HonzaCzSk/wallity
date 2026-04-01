@@ -19,6 +19,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late final FocusNode _searchFocusNode;
   late final TextEditingController _searchController;
+
+  static const String _sortNone = 'none';
   int ratingValue(String r) {
     const map = {
       "A+": 8,
@@ -73,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return text.toLowerCase();
   }
 
-  String _sortOption = 'none';
+  String _sortOption = _sortNone;
   List<Bank> banks = [];
   String searchQuery = '';
 
@@ -83,22 +85,18 @@ class _HomeScreenState extends State<HomeScreen> {
     return banks.where((b) => normalize(b.name).contains(q)).toList();
   }
 
-  void sortBanks() {
-    setState(() {
-      if (_sortOption == "name_asc") {
-        banks.sort((a, b) => normalize(a.name).compareTo(normalize(b.name)));
-      } else if (_sortOption == "name_desc") {
-        banks.sort((a, b) => normalize(b.name).compareTo(normalize(a.name)));
-      } else if (_sortOption == "rating_best") {
-        banks.sort(
-          (a, b) => ratingValue(b.rating).compareTo(ratingValue(a.rating)),
-        );
-      } else if (_sortOption == "rating_worst") {
-        banks.sort(
-          (a, b) => ratingValue(a.rating).compareTo(ratingValue(b.rating)),
-        );
-      }
-    });
+  List<Bank> _sortedBanks(List<Bank> input) {
+    final out = List<Bank>.from(input);
+    if (_sortOption == "name_asc") {
+      out.sort((a, b) => normalize(a.name).compareTo(normalize(b.name)));
+    } else if (_sortOption == "name_desc") {
+      out.sort((a, b) => normalize(b.name).compareTo(normalize(a.name)));
+    } else if (_sortOption == "rating_best") {
+      out.sort((a, b) => ratingValue(b.rating).compareTo(ratingValue(a.rating)));
+    } else if (_sortOption == "rating_worst") {
+      out.sort((a, b) => ratingValue(a.rating).compareTo(ratingValue(b.rating)));
+    }
+    return out;
   }
 
   @override
@@ -138,8 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
       context,
     ).loadString('assets/data/banks.json');
     final data = jsonDecode(response) as List<dynamic>;
+    final loaded = data.map((e) => Bank.fromJson(e)).toList();
+    final sorted = _sortedBanks(loaded);
     setState(() {
-      banks = data.map((e) => Bank.fromJson(e)).toList();
+      banks = sorted;
     });
   }
 
@@ -175,36 +175,24 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
           actions: [
-            DropdownButtonHideUnderline(
-              child: DropdownButton<String>(
-                value: _sortOption,
+            Padding(
+              padding: const EdgeInsets.only(right: 6),
+              child: PopupMenuButton<String>(
+                tooltip: 'Řazení',
                 icon: const Icon(Icons.filter_list, color: Colors.white),
-                dropdownColor: Colors.white,
-                padding: const EdgeInsets.only(right: 12),
-                items: const [
-                  DropdownMenuItem(
-                    value: "none",
-                    child: Text("Bez řazení"),
-                  ),
-                  DropdownMenuItem(value: "name_asc", child: Text("A–Z")),
-                  DropdownMenuItem(
-                    value: "name_desc",
-                    child: Text("Z–A"),
-                  ),
-                  DropdownMenuItem(
-                    value: "rating_best",
-                    child: Text("Nejlepší rating"),
-                  ),
-                  DropdownMenuItem(
-                    value: "rating_worst",
-                    child: Text("Nejhorší rating"),
-                  ),
-                ],
-                onChanged: (value) {
-                  if (value == null) return;
-                  _sortOption = value;
-                  sortBanks();
+                onSelected: (value) {
+                  setState(() {
+                    _sortOption = value;
+                    banks = _sortedBanks(banks);
+                  });
                 },
+                itemBuilder: (context) => const [
+                  PopupMenuItem(value: "none", child: Text("Bez řazení")),
+                  PopupMenuItem(value: "name_asc", child: Text("A–Z")),
+                  PopupMenuItem(value: "name_desc", child: Text("Z–A")),
+                  PopupMenuItem(value: "rating_best", child: Text("Nejlepší rating")),
+                  PopupMenuItem(value: "rating_worst", child: Text("Nejhorší rating")),
+                ],
               ),
             ),
           ],
