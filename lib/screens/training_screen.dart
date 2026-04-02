@@ -22,6 +22,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
   bool _fromRemote = false;
 
   List<QuizQuestion> _questions = [];
+  int _originalTotal = 0;
   bool _loaded = false;
 
   int _index = 0;
@@ -48,7 +49,8 @@ class _TrainingScreenState extends State<TrainingScreen> {
 
     setState(() {
       _level = level;
-      _questions = shuffled;
+      _originalTotal = use.length;
+      _questions = shuffled.take(5).toList();
       _loaded = true;
 
       _index = 0;
@@ -84,7 +86,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
         context: context,
         builder: (_) => AlertDialog(
           title: Text(widget.kidsMode ? "Hotovo! 🎉" : "Dokončeno ✅"),
-          content: Text("Skóre: $_score / ${_questions.length}"),
+          content: Text("Skóre: $_score / ${_questions.length} (z $_originalTotal)"),
           actions: [
             TextButton(
               onPressed: () {
@@ -135,8 +137,8 @@ class _TrainingScreenState extends State<TrainingScreen> {
           const SizedBox(height: 8),
           Text(
             widget.kidsMode
-                ? "Začni lehkým levelem. Když dáš, zkus těžší."
-                : "Zvol si obtížnost. Otázky se filtrují podle levelu.",
+                ? "Začni lehkým levelem (max 5 otázek). Když dáš, zkus těžší."
+                : "Zvol si obtížnost (max 5 otázek na level). Otázky se filtrují podle levelu.",
             style: const TextStyle(color: Colors.black54),
           ),
           const SizedBox(height: 12),
@@ -215,7 +217,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Level: $_level", style: Theme.of(context).textTheme.titleMedium),
-                    Text("Skóre: $_score / $total",
+                    Text("Skóre: $_score / $total ${_originalTotal > 5 ? '(max 5)' : ''}",
                         style: Theme.of(context).textTheme.titleMedium),
                   ],
                 ),
@@ -237,7 +239,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
                 ),
 
                 const SizedBox(height: 6),
-                Text("Otázka ${_index + 1}/$total",
+                Text("Otázka ${_index + 1}/$total ${_originalTotal > 5 ? '(max 5)' : ''}",
                     style: Theme.of(context).textTheme.titleMedium),
                 const SizedBox(height: 10),
                 Text(q.prompt, style: Theme.of(context).textTheme.titleLarge),
