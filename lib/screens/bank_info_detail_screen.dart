@@ -19,8 +19,8 @@ class _BankDetailScreenState extends State<BankDetailScreen> {
   void initState() {
     super.initState();
     SeoHelper.set(
-      title: '\${widget.bank.name} – Wallity',
-      description: 'Bezpečnostní informace, kontakty a přehled podvodů pro \${widget.bank.name}.',
+      title: '${widget.bank.name} – Wallity',
+      description: 'Bezpečnostní informace, kontakty a přehled podvodů pro ${widget.bank.name}.',
     );
   }
 
@@ -56,7 +56,6 @@ class _BankDetailScreenState extends State<BankDetailScreen> {
             BankLogo(
               name: bank.name,
               assetPath: bank.logoAsset,
-              imageUrl: bank.logoUrl,
               websiteUrl: bank.websiteUrl,
               size: 28,
             ),

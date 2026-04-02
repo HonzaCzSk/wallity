@@ -31,7 +31,6 @@ class BankCard extends StatelessWidget {
               BankLogo(
                 name: bank.name,
                 assetPath: bank.logoAsset,
-                imageUrl: bank.logoUrl,
                 websiteUrl: bank.websiteUrl,
                 size: 44,
               ),

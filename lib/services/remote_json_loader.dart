@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'package:http/http.dart' as http;
 
 class JsonLoadResult {
   final List<dynamic> data;
@@ -10,22 +9,12 @@ class JsonLoadResult {
 }
 
 Future<JsonLoadResult> loadJsonListWithFallback({
-  required String remoteUrl,
+  String? remoteUrl,
   required String assetPath,
   Duration timeout = const Duration(seconds: 4),
 }) async {
-  // 1) Try remote
-  try {
-    final res = await http.get(Uri.parse(remoteUrl)).timeout(timeout);
-    if (res.statusCode >= 200 && res.statusCode < 300) {
-      final decoded = jsonDecode(res.body);
-      if (decoded is List) {
-        return JsonLoadResult(data: decoded, fromRemote: true);
-      }
-    }
-  } catch (_) {
-    // ignore -> fallback
-  }
+  // Always use local asset (no remote for PWA CORS safety)
+  // Remote fetching disabled
 
   // 2) Fallback to asset
   final raw = await rootBundle.loadString(assetPath);

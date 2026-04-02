@@ -1,4 +1,3 @@
-import '../config/remote_config.dart';
 import '../models/quiz_question.dart';
 import 'remote_json_loader.dart';
 
@@ -13,14 +12,10 @@ class QuestionsLoadResult {
 }
 
 Future<QuestionsLoadResult> loadQuestions({required bool kidsMode}) async {
-  final remoteUrl =
-      kidsMode ? RemoteConfig.kidsQuestionsUrl() : RemoteConfig.normalQuestionsUrl();
-
   final assetPath =
       kidsMode ? 'assets/data/questions_kids.json' : 'assets/data/questions_normal.json';
 
   final result = await loadJsonListWithFallback(
-    remoteUrl: remoteUrl,
     assetPath: assetPath,
   );
 
@@ -30,6 +25,6 @@ Future<QuestionsLoadResult> loadQuestions({required bool kidsMode}) async {
 
   return QuestionsLoadResult(
     questions: questions,
-    fromRemote: result.fromRemote,
+    fromRemote: false,
   );
 }
