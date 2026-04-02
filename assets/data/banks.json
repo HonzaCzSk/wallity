@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Česká spořitelna",
     "rating": "A",
-    "logoUrl": "https://www.csas.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/csas.png",
     "images": [],
     "phishing_examples": [
       "SMS: 'Vaše karta byla zablokována, potvrďte zde…'",
@@ -30,7 +30,7 @@
     "id": 2,
     "name": "Komerční banka",
     "rating": "A",
-    "logoUrl": "https://www.kb.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/kb.png",
     "images": [],
     "phishing_examples": [
       "SMS: 'Vaše karta končí, ověřte svou identitu…'",
@@ -55,7 +55,7 @@
     "id": 3,
     "name": "ČSOB",
     "rating": "A",
-    "logoUrl": "https://www.csob.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/csob.png",
     "images": [],
     "phishing_examples": [
       "SMS: 'Nutná verifikace účtu ČSOB…'",
@@ -80,7 +80,7 @@
     "id": 4,
     "name": "Air Bank",
     "rating": "A+",
-    "logoUrl": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://airbank.cz&size=128",
+    "logoAsset": "assets/images/banks/airbank.png",
     "images": [],
     "phishing_examples": [
       "Email: 'Potvrďte přihlášení k My Air'",
@@ -105,7 +105,7 @@
     "id": 5,
     "name": "Raiffeisenbank",
     "rating": "A",
-    "logoUrl": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://rb.cz&size=128",
+    "logoAsset": "assets/images/banks/rb.png",
     "images": [],
     "phishing_examples": [
       "Email: 'Ověřte svou identitu v RB…'",
@@ -130,7 +130,7 @@
     "id": 6,
     "name": "Fio banka",
     "rating": "A-",
-    "logoUrl": "https://www.fio.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/fio.png",
     "images": [],
     "phishing_examples": [
       "Email: 'Nové zabezpečení – nutné přihlášení'",
@@ -155,7 +155,7 @@
     "id": 7,
     "name": "Moneta Money Bank",
     "rating": "A",
-    "logoUrl": "https://www.moneta.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/moneta.png",
     "images": [],
     "phishing_examples": [
       "SMS: 'Potvrďte transakci – Moneta…'",
@@ -180,7 +180,7 @@
     "id": 8,
     "name": "mBank",
     "rating": "A",
-    "logoUrl": "https://www.mbank.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/mbank.png",
     "images": [],
     "phishing_examples": [
       "Email: 'Aktualizujte údaje v internetovém bankovnictví…'",
@@ -205,7 +205,7 @@
     "id": 9,
     "name": "UniCredit Bank",
     "rating": "A",
-    "logoUrl": "https://www.unicreditbank.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/unicredit.png",
     "images": [],
     "phishing_examples": [
       "Email: 'Neobvyklá aktivita – ověřte účet…'",
@@ -230,7 +230,7 @@
     "id": 10,
     "name": "Creditas",
     "rating": "A",
-    "logoUrl": "https://www.creditas.cz/favicon.ico",
+    "logoAsset": "assets/images/banks/creditas.png",
     "images": [],
     "phishing_examples": [
       "Email: 'Ověření účtu – potvrďte přihlášení…'",
