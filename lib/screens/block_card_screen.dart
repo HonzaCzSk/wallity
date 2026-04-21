@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import '../services/banks_loader.dart';
 import '../utils/seo.dart';
+import '../utils/language.dart';
+import '../lang/app_strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlockCardScreen extends StatefulWidget {
@@ -34,12 +36,10 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
   Future<void> _callPhone(String phone) async {
     final p = phone.trim();
     if (p.isEmpty) return;
-
-    final uri = Uri(scheme: 'tel', path: p);
-    await launchUrl(uri);
+    await launchUrl(Uri(scheme: 'tel', path: p));
   }
 
-  void _showBankActions(Map<String, dynamic> bank) {
+  void _showBankActions(Map<String, dynamic> bank, S s) {
     final name = (bank['name'] ?? '') as String;
     final phone = (bank['cardBlockPhone'] ?? '') as String;
     final website = (bank['websiteUrl'] ?? '') as String;
@@ -56,13 +56,13 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Text(
-                name.isEmpty ? "Banka" : name,
+                name.isEmpty ? s.bankFallback : name,
                 style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 8),
-              const Text(
-                "Používejte jen oficiální kontakty. Nevolejte čísla ze SMS/e-mailů.",
-                style: TextStyle(color: Colors.black54),
+              Text(
+                s.officialContactsWarning,
+                style: const TextStyle(color: Colors.black54),
               ),
               const SizedBox(height: 16),
 
@@ -70,7 +70,7 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
                 onPressed: phone.trim().isEmpty ? null : () => _callPhone(phone),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.redAccent),
                 child: Text(
-                  phone.trim().isEmpty ? "Blokace karty: není k dispozici" : "Zavolat blokaci karty",
+                  phone.trim().isEmpty ? s.cardBlockNA : s.callCardBlock,
                   style: const TextStyle(color: Colors.white),
                 ),
               ),
@@ -78,7 +78,7 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
 
               OutlinedButton(
                 onPressed: website.trim().isEmpty ? null : () => _openUrl(website),
-                child: const Text("Otevřít web banky"),
+                child: Text(s.openBankWebsite),
               ),
               const SizedBox(height: 10),
 
@@ -86,7 +86,7 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
                 onPressed: (fraud.trim().isEmpty && website.trim().isEmpty)
                     ? null
                     : () => _openUrl(fraud.trim().isEmpty ? website : fraud),
-                child: const Text("Bezpečnost / nahlášení podvodu"),
+                child: Text(s.reportFraud),
               ),
 
               const SizedBox(height: 8),
@@ -99,68 +99,77 @@ class _BlockCardScreenState extends State<BlockCardScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Zablokovat kartu")),
-      body: FutureBuilder<List<Map<String, dynamic>>>(
-        future: _futureBanks,
-        builder: (context, snap) {
-          if (snap.connectionState != ConnectionState.done) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (snap.hasError) {
-            return Center(child: Text("Chyba: ${snap.error}"));
-          }
+    return ValueListenableBuilder<bool>(
+      valueListenable: languageNotifier,
+      builder: (context, isEn, _) {
+        final s = S(isEn);
 
-          final banks = snap.data ?? [];
-          if (banks.isEmpty) {
-            return const Center(child: Text("Žádné banky v databázi."));
-          }
+        return Scaffold(
+          appBar: AppBar(title: Text(s.blockCardTitle)),
+          body: FutureBuilder<List<Map<String, dynamic>>>(
+            future: _futureBanks,
+            builder: (context, snap) {
+              if (snap.connectionState != ConnectionState.done) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              if (snap.hasError) {
+                return Center(child: Text('${s.errorPrefix}${snap.error}'));
+              }
 
-          final filtered = banks.where((b) {
-            final name = ((b['name'] ?? '') as String).toLowerCase();
-            return name.contains(_query.toLowerCase());
-          }).toList();
+              final banks = snap.data ?? [];
+              if (banks.isEmpty) {
+                return Center(child: Text(s.noBanks));
+              }
 
-          return Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                TextField(
-                  decoration: const InputDecoration(
-                    labelText: "Vyhledat banku",
-                    prefixIcon: Icon(Icons.search),
-                    border: OutlineInputBorder(),
-                  ),
-                  onChanged: (v) => setState(() => _query = v),
+              final filtered = banks.where((b) {
+                final name = ((b['name'] ?? '') as String).toLowerCase();
+                return name.contains(_query.toLowerCase());
+              }).toList();
+
+              return Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: s.searchBankLabel,
+                        prefixIcon: const Icon(Icons.search),
+                        border: const OutlineInputBorder(),
+                      ),
+                      onChanged: (v) => setState(() => _query = v),
+                    ),
+                    const SizedBox(height: 12),
+
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: filtered.length,
+                        itemBuilder: (context, i) {
+                          final bank = filtered[i];
+                          final name = (bank['name'] ?? s.bankFallback) as String;
+                          final phone = (bank['cardBlockPhone'] ?? '') as String;
+
+                          return Card(
+                            child: ListTile(
+                              title: Text(name),
+                              subtitle: Text(
+                                phone.trim().isEmpty
+                                    ? s.cardBlockNA
+                                    : s.cardBlockPhone(phone),
+                              ),
+                              trailing: const Icon(Icons.chevron_right),
+                              onTap: () => _showBankActions(bank, s),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(height: 12),
-
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: filtered.length,
-                    itemBuilder: (context, i) {
-                      final bank = filtered[i];
-                      final name = (bank['name'] ?? 'Banka') as String;
-                      final phone = (bank['cardBlockPhone'] ?? '') as String;
-
-                      return Card(
-                        child: ListTile(
-                          title: Text(name),
-                          subtitle: Text(
-                            phone.trim().isEmpty ? "Blokace karty: není k dispozici" : "Blokace karty: $phone",
-                          ),
-                          trailing: const Icon(Icons.chevron_right),
-                          onTap: () => _showBankActions(bank),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }

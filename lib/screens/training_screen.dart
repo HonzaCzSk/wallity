@@ -5,10 +5,11 @@ import 'package:flutter/material.dart';
 import '../models/quiz_question.dart';
 import '../services/questions_loader.dart';
 import '../utils/seo.dart';
+import '../utils/language.dart';
+import '../lang/app_strings.dart';
 
 class TrainingScreen extends StatefulWidget {
   final bool kidsMode;
-
   const TrainingScreen({super.key, required this.kidsMode});
 
   @override
@@ -43,8 +44,6 @@ class _TrainingScreenState extends State<TrainingScreen> {
   void _applyLevel(List<QuizQuestion> all, int level) {
     final filtered = all.where((q) => q.difficulty == level).toList();
     final use = filtered.isNotEmpty ? filtered : all;
-
-    // Random pořadí pokaždé
     final shuffled = List<QuizQuestion>.from(use)..shuffle();
 
     setState(() {
@@ -52,7 +51,6 @@ class _TrainingScreenState extends State<TrainingScreen> {
       _originalTotal = use.length;
       _questions = shuffled.take(5).toList();
       _loaded = true;
-
       _index = 0;
       _score = 0;
       _answered = false;
@@ -62,7 +60,6 @@ class _TrainingScreenState extends State<TrainingScreen> {
 
   void _answer(QuizQuestion q, int picked) {
     if (_answered) return;
-
     final correct = picked == q.correctIndex;
     setState(() {
       _answered = true;
@@ -80,34 +77,34 @@ class _TrainingScreenState extends State<TrainingScreen> {
     });
   }
 
-  void _next() {
+  void _next(S s) {
     if (_index >= _questions.length - 1) {
       showDialog(
         context: context,
         builder: (_) => AlertDialog(
-          title: Text(widget.kidsMode ? "Hotovo! 🎉" : "Dokončeno ✅"),
-          content: Text("Skóre: $_score / ${_questions.length} (z $_originalTotal)"),
+          title: Text(widget.kidsMode ? s.doneKids : s.doneNormal),
+          content: Text(s.scoreDialog(_score, _questions.length)),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
                 _restart();
               },
-              child: Text(widget.kidsMode ? "Znovu" : "Spustit znovu"),
+              child: Text(widget.kidsMode ? s.playAgainKids : s.playAgainNormal),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
                 setState(() => _loaded = false);
               },
-              child: const Text("Změnit obtížnost"),
+              child: Text(s.changeDifficulty),
             ),
             TextButton(
               onPressed: () {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: const Text("Zpět"),
+              child: Text(s.back),
             ),
           ],
         ),
@@ -122,28 +119,22 @@ class _TrainingScreenState extends State<TrainingScreen> {
     });
   }
 
-  Widget _buildLevelPicker(List<QuizQuestion> all) {
-    final title = "Vyber obtížnost";
-    final easy = widget.kidsMode ? "Lehké 😊" : "Lehké";
-    final hard = widget.kidsMode ? "Těžší 😈" : "Těžší";
-
+  Widget _buildLevelPicker(List<QuizQuestion> all, S s) {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const SizedBox(height: 12),
-          Text(title, style: Theme.of(context).textTheme.titleLarge),
+          Text(s.selectDifficulty, style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 8),
           Text(
-            widget.kidsMode
-                ? "Začni lehkým levelem (max 5 otázek). Když dáš, zkus těžší."
-                : "Zvol si obtížnost (max 5 otázek na level). Otázky se filtrují podle levelu.",
+            widget.kidsMode ? s.difficultyHintKids : s.difficultyHintNormal,
             style: const TextStyle(color: Colors.black54),
           ),
           const SizedBox(height: 12),
           Text(
-            "Načteno: ${_fromRemote ? "online" : "offline"}",
+            _fromRemote ? s.loadedOnline : s.loadedOffline,
             textAlign: TextAlign.right,
             style: const TextStyle(fontSize: 12, color: Colors.black54),
           ),
@@ -154,7 +145,7 @@ class _TrainingScreenState extends State<TrainingScreen> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             ),
             onPressed: () => _applyLevel(all, 1),
-            child: Text(easy),
+            child: Text(widget.kidsMode ? s.easyKids : s.easyNormal),
           ),
           const SizedBox(height: 12),
           OutlinedButton(
@@ -163,13 +154,11 @@ class _TrainingScreenState extends State<TrainingScreen> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             ),
             onPressed: () => _applyLevel(all, 2),
-            child: Text(hard),
+            child: Text(widget.kidsMode ? s.harderKids : s.harderNormal),
           ),
           const SizedBox(height: 16),
           Text(
-            widget.kidsMode
-                ? "Tip: nikdy nikomu neposílej heslo ani kód z SMS."
-                : "Tip: nikdy nesděluj autorizační kód z SMS ani přihlašovací údaje.",
+            widget.kidsMode ? s.tipKids : s.tipNormal,
             style: const TextStyle(color: Colors.black54),
           ),
         ],
@@ -179,118 +168,129 @@ class _TrainingScreenState extends State<TrainingScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.kidsMode ? "Dětský trénink" : "Bezpečnostní výcvik"),
-      ),
-      body: FutureBuilder<QuestionsLoadResult>(
-        future: _futureAll,
-        builder: (context, snap) {
-          if (snap.connectionState != ConnectionState.done) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (snap.hasError) {
-            return Center(child: Text("Chyba: ${snap.error}"));
-          }
+    return ValueListenableBuilder<bool>(
+      valueListenable: languageNotifier,
+      builder: (context, isEn, _) {
+        final s = S(isEn);
 
-          final result = snap.data;
-          final all = result?.questions ?? [];
-          _fromRemote = result?.fromRemote ?? false;
+        return Scaffold(
+          appBar: AppBar(
+            title: Text(widget.kidsMode ? s.kidsTrainingTitle : s.securityTrainingTitle),
+          ),
+          body: FutureBuilder<QuestionsLoadResult>(
+            future: _futureAll,
+            builder: (context, snap) {
+              if (snap.connectionState != ConnectionState.done) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              if (snap.hasError) {
+                return Center(child: Text('${s.errorPrefix}${snap.error}'));
+              }
 
-          if (all.isEmpty) {
-            return const Center(child: Text("Žádné otázky."));
-          }
+              final result = snap.data;
+              final all = result?.questions ?? [];
+              _fromRemote = result?.fromRemote ?? false;
 
-          if (!_loaded) {
-            return _buildLevelPicker(all);
-          }
+              if (all.isEmpty) {
+                return Center(child: Text(s.noQuestions));
+              }
 
-          final q = _questions[_index];
-          final total = _questions.length;
+              if (!_loaded) {
+                return _buildLevelPicker(all, s);
+              }
 
-          return Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              final q = _questions[_index];
+              final total = _questions.length;
+
+              return Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Text("Level: $_level", style: Theme.of(context).textTheme.titleMedium),
-                    Text("Skóre: $_score / $total ${_originalTotal > 5 ? '(max 5)' : ''}",
-                        style: Theme.of(context).textTheme.titleMedium),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(s.levelLabel(_level),
+                            style: Theme.of(context).textTheme.titleMedium),
+                        Text(s.scoreLabel(_score, total, _originalTotal),
+                            style: Theme.of(context).textTheme.titleMedium),
+                      ],
+                    ),
+                    const SizedBox(height: 8),
+                    LinearProgressIndicator(value: (_index + 1) / total),
+                    const SizedBox(height: 6),
+                    Text(
+                      _fromRemote ? s.loadedOnline : s.loadedOffline,
+                      textAlign: TextAlign.right,
+                      style: const TextStyle(fontSize: 12, color: Colors.black54),
+                    ),
+
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: TextButton(
+                        onPressed: () => setState(() => _loaded = false),
+                        child: Text(s.changeDifficulty),
+                      ),
+                    ),
+
+                    const SizedBox(height: 6),
+                    Text(
+                      s.questionLabel(_index + 1, total, _originalTotal),
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 10),
+                    Text(q.localizedPrompt(isEn), style: Theme.of(context).textTheme.titleLarge),
+                    const SizedBox(height: 16),
+
+                    ...List.generate(q.choices.length, (i) {
+                      final isPicked = _selected == i;
+                      final isCorrect = i == q.correctIndex;
+
+                      Color? bg;
+                      if (_answered) {
+                        if (isCorrect) bg = Colors.green.withOpacity(0.15);
+                        if (isPicked && !isCorrect) bg = Colors.red.withOpacity(0.15);
+                      }
+
+                      final choiceText = q.localizedChoices(isEn)[i];
+                      final label = widget.kidsMode ? '👉 $choiceText' : choiceText;
+
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+                            backgroundColor: bg,
+                          ),
+                          onPressed: () => _answer(q, i),
+                          child: Text(label),
+                        ),
+                      );
+                    }),
+
+                    const SizedBox(height: 8),
+                    if (_answered) ...[
+                      Text(
+                        (_selected == q.correctIndex)
+                            ? (widget.kidsMode ? s.answerCorrectKids : s.answerCorrectNormal)
+                            : (widget.kidsMode ? s.answerWrongKids : s.answerWrongNormal),
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                      const SizedBox(height: 6),
+                      Text(q.localizedExplanation(isEn)),
+                      const SizedBox(height: 12),
+                      ElevatedButton(
+                        onPressed: () => _next(s),
+                        child: Text(s.next),
+                      ),
+                    ],
                   ],
                 ),
-                const SizedBox(height: 8),
-                LinearProgressIndicator(value: (_index + 1) / total),
-                const SizedBox(height: 6),
-                Text(
-                  "Načteno: ${_fromRemote ? "online" : "offline"}",
-                  textAlign: TextAlign.right,
-                  style: const TextStyle(fontSize: 12, color: Colors.black54),
-                ),
-
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () => setState(() => _loaded = false),
-                    child: const Text("Změnit obtížnost"),
-                  ),
-                ),
-
-                const SizedBox(height: 6),
-                Text("Otázka ${_index + 1}/$total ${_originalTotal > 5 ? '(max 5)' : ''}",
-                    style: Theme.of(context).textTheme.titleMedium),
-                const SizedBox(height: 10),
-                Text(q.prompt, style: Theme.of(context).textTheme.titleLarge),
-                const SizedBox(height: 16),
-
-                ...List.generate(q.choices.length, (i) {
-                  final isPicked = _selected == i;
-                  final isCorrect = i == q.correctIndex;
-
-                  Color? bg;
-                  if (_answered) {
-                    if (isCorrect) bg = Colors.green.withOpacity(0.15);
-                    if (isPicked && !isCorrect) bg = Colors.red.withOpacity(0.15);
-                  }
-
-                  final label = widget.kidsMode ? "👉 ${q.choices[i]}" : q.choices[i];
-
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
-                        backgroundColor: bg,
-                      ),
-                      onPressed: () => _answer(q, i),
-                      child: Text(label),
-                    ),
-                  );
-                }),
-
-                const SizedBox(height: 8),
-                if (_answered) ...[
-                  Text(
-                    (_selected == q.correctIndex)
-                        ? (widget.kidsMode ? "Super! 🌟" : "Správně ✅")
-                        : (widget.kidsMode ? "Zkus to znovu 🙂" : "Špatně ❌"),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                  const SizedBox(height: 6),
-                  Text(q.explanation),
-                  const SizedBox(height: 12),
-                  ElevatedButton(
-                    onPressed: _next,
-                    child: const Text("Další"),
-                  ),
-                ],
-              ],
-            ),
-          );
-        },
-      ),
+              );
+            },
+          ),
+        );
+      },
     );
   }
 }

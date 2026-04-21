@@ -2,311 +2,276 @@
   {
     "id": "k01",
     "prompt": "Co je silné heslo?",
-    "choices": [
-      "123456",
-      "moje jméno",
-      "heslo",
-      "K4m!n3k_98"
-    ],
+    "prompt_en": "What is a strong password?",
+    "choices": ["123456", "moje jméno", "heslo", "K4m!n3k_98"],
+    "choices_en": ["123456", "my name", "password", "K4m!n3k_98"],
     "correctIndex": 3,
     "explanation": "Silné heslo je dlouhé a obsahuje velká i malá písmena, čísla a speciální znaky.",
+    "explanation_en": "A strong password is long and contains uppercase and lowercase letters, numbers, and special characters.",
     "difficulty": 1
   },
   {
     "id": "k02",
     "prompt": "Co uděláš, když tě někdo na internetu požádá o osobní údaje?",
-    "choices": [
-      "Hned mu je poslat",
-      "Zeptat se kamaráda",
-      "Počkat a říct to dospělému",
-      "Napsat je do komentáře"
-    ],
+    "prompt_en": "What do you do if someone online asks for your personal information?",
+    "choices": ["Hned mu je poslat", "Zeptat se kamaráda", "Počkat a říct to dospělému", "Napsat je do komentáře"],
+    "choices_en": ["Send them right away", "Ask a friend", "Wait and tell an adult", "Write them in a comment"],
     "correctIndex": 2,
     "explanation": "Osobní údaje jsou citlivé. Když si nejsi jistý/á, řekni to dospělému a nic neposílej.",
+    "explanation_en": "Personal information is sensitive. If you are not sure, tell an adult and do not send anything.",
     "difficulty": 1
   },
   {
     "id": "k03",
-    "prompt": "Co znamená, když má webová stránka v adrese „https://“?",
-    "choices": [
-      "Je barevná",
-      "Je rychlejší",
-      "Je zabezpečená",
-      "Je zdarma"
-    ],
+    "prompt": "Co znamená, když má webová stránka v adrese https://?",
+    "prompt_en": "What does it mean when a website address starts with https://?",
+    "choices": ["Je barevná", "Je rychlejší", "Je zabezpečená", "Je zdarma"],
+    "choices_en": ["It is colorful", "It is faster", "It is secured", "It is free"],
     "correctIndex": 2,
     "explanation": "HTTPS znamená, že spojení je šifrované. Pořád ale kontroluj, jestli je to správný web.",
+    "explanation_en": "HTTPS means the connection is encrypted. Still check that it is the right website.",
     "difficulty": 2
   },
   {
     "id": "k04",
     "prompt": "Co bys měl/a udělat, když ti přijde divný e-mail?",
-    "choices": [
-      "Hned odpovědět",
-      "Kliknout na odkaz",
-      "Smazat nebo nahlásit",
-      "Poslat ho někomu dalšímu"
-    ],
+    "prompt_en": "What should you do when you receive a suspicious email?",
+    "choices": ["Hned odpovědět", "Kliknout na odkaz", "Smazat nebo nahlásit", "Poslat ho někomu dalšímu"],
+    "choices_en": ["Reply immediately", "Click the link", "Delete or report it", "Forward it to someone else"],
     "correctIndex": 2,
     "explanation": "Divné e-maily mohou být podvod. Neklikej na odkazy a raději to smaž nebo nahlas dospělému.",
+    "explanation_en": "Suspicious emails may be scams. Do not click any links - delete it or report it to an adult.",
     "difficulty": 1
   },
   {
     "id": "k05",
     "prompt": "Jaké informace je bezpečné sdílet na internetu?",
-    "choices": [
-      "Rodné číslo",
-      "Adresa bydliště",
-      "Číslo platební karty",
-      "Zájmy nebo koníčky"
-    ],
+    "prompt_en": "What information is safe to share online?",
+    "choices": ["Rodné číslo", "Adresa bydliště", "Číslo platební karty", "Zájmy nebo koníčky"],
+    "choices_en": ["National ID number", "Home address", "Payment card number", "Interests or hobbies"],
     "correctIndex": 3,
     "explanation": "Rodné číslo, adresa i karta jsou citlivé. Koníčky jsou většinou v pohodě.",
+    "explanation_en": "ID numbers, addresses, and card numbers are sensitive. Hobbies are usually fine to share.",
     "difficulty": 1
   },
   {
     "id": "k06",
     "prompt": "Co je phishing?",
-    "choices": [
-      "Druh počítačové hry",
-      "Snaha získat osobní údaje",
-      "Antivirový program",
-      "Nastavení počítače"
-    ],
+    "prompt_en": "What is phishing?",
+    "choices": ["Druh počítačové hry", "Snaha získat osobní údaje", "Antivirový program", "Nastavení počítače"],
+    "choices_en": ["A type of computer game", "An attempt to steal personal data", "An antivirus program", "A computer setting"],
     "correctIndex": 1,
     "explanation": "Phishing je podvod, kdy se tě někdo snaží nachytat a získat heslo, kód nebo údaje z karty.",
+    "explanation_en": "Phishing is a scam where someone tries to trick you into giving up your password, code, or card details.",
     "difficulty": 2
   },
   {
     "id": "k07",
     "prompt": "Co dělat, když ztratíš platební kartu?",
-    "choices": [
-      "Nic, ona se najde",
-      "Půjčit si jinou",
-      "Zablokovat kartu",
-      "Napsat o tom na sociální sítě"
-    ],
+    "prompt_en": "What should you do if you lose your payment card?",
+    "choices": ["Nic, ona se najde", "Půjčit si jinou", "Zablokovat kartu", "Napsat o tom na sociální sítě"],
+    "choices_en": ["Nothing, it will turn up", "Borrow another one", "Block the card", "Post about it on social media"],
     "correctIndex": 2,
     "explanation": "Když kartu ztratíš, je potřeba ji hned zablokovat. Pak to řeš s bankou nebo dospělým.",
+    "explanation_en": "If you lose your card, block it immediately. Then sort it out with your bank or an adult.",
     "difficulty": 1
-  }
-  ,
+  },
   {
     "id": "k08",
-    "prompt": "Kamarád ti pošle odkaz a píše: „Klikni, je to sranda!“ Co uděláš?",
-    "choices": [
-      "Kliknu hned",
-      "Nejprve se zeptám, co to je, a když si nejsem jistý/á, neklikám",
-      "Pošlu odkaz všem"
-    ],
+    "prompt": "Kamarád ti pošle odkaz a píše, že je to sranda a ať klikneš. Co uděláš?",
+    "prompt_en": "A friend sends you a link and says it is funny and you should click it. What do you do?",
+    "choices": ["Kliknu hned", "Nejprve se zeptám, co to je, a když si nejsem jistý/á, neklikám", "Pošlu odkaz všem"],
+    "choices_en": ["Click it right away", "First ask what it is, and if unsure, do not click", "Forward it to everyone"],
     "correctIndex": 1,
     "explanation": "I kamarád může omylem poslat podvodný odkaz. Když si nejsi jistý/á, neklikej.",
+    "explanation_en": "Even a friend can accidentally send a malicious link. If you are not sure, do not click.",
     "difficulty": 2
   },
   {
     "id": "k09",
-    "prompt": "Přijde ti zpráva: „Pošli kód z SMS a vyhraješ.“ Co uděláš?",
-    "choices": [
-      "Kód pošlu",
-      "Kód nikdy nikomu neposílám",
-      "Kód napíšu do komentáře"
-    ],
+    "prompt": "Přijde ti zpráva: pošli kód z SMS a vyhraješ. Co uděláš?",
+    "prompt_en": "You receive a message saying send the SMS code and you will win a prize. What do you do?",
+    "choices": ["Kód pošlu", "Kód nikdy nikomu neposílám", "Kód napíšu do komentáře"],
+    "choices_en": ["Send the code", "Never send the code to anyone", "Write the code in a comment"],
     "correctIndex": 1,
     "explanation": "Kód z SMS je tajný. Kdo ho získá, může se dostat do účtu.",
+    "explanation_en": "An SMS code is secret. Whoever gets it can access your account.",
     "difficulty": 2
   },
   {
     "id": "k10",
     "prompt": "Jak poznáš správný web školy/banky?",
-    "choices": [
-      "Je první ve vyhledávání",
-      "Má správnou adresu a neklikám na podezřelé reklamy",
-      "Má hodně barev"
-    ],
+    "prompt_en": "How do you recognise the correct website of your school or bank?",
+    "choices": ["Je první ve vyhledávání", "Má správnou adresu a neklikám na podezřelé reklamy", "Má hodně barev"],
+    "choices_en": ["It is first in search results", "It has the correct address and I do not click suspicious ads", "It has lots of colours"],
     "correctIndex": 1,
     "explanation": "Důležitá je správná adresa webu. Raději ji napiš ručně nebo použij oficiální aplikaci.",
+    "explanation_en": "The correct web address matters. Type it manually or use the official app.",
     "difficulty": 2
   },
   {
     "id": "k11",
-    "prompt": "Co uděláš, když ti někdo napíše: „Pošli mi fotku karty, jen na chvilku“?",
-    "choices": [
-      "Pošlu mu ji",
-      "Nepošlu ji a řeknu to dospělému",
-      "Dám ji do komentáře"
-    ],
+    "prompt": "Co uděláš, když ti někdo napíše: pošli mi fotku karty, jen na chvilku?",
+    "prompt_en": "What do you do if someone writes: send me a photo of your card, just for a moment?",
+    "choices": ["Pošlu mu ji", "Nepošlu ji a řeknu to dospělému", "Dám ji do komentáře"],
+    "choices_en": ["Send it to them", "Do not send it and tell an adult", "Post it in a comment"],
     "correctIndex": 1,
     "explanation": "Fotka karty je citlivá. Nikdy ji neposílej a vždy to řekni dospělému.",
+    "explanation_en": "A photo of your card is sensitive. Never send it and always tell an adult.",
     "difficulty": 1
   },
   {
     "id": "k12",
     "prompt": "Jak se chováš k heslu?",
-    "choices": [
-      "Řeknu ho kamarádovi",
-      "Napíšu ho na papír a nechám ho ve třídě",
-      "Heslo si nechám pro sebe a mám ho silné",
-      "Dám ho do veřejného chatu"
-    ],
+    "prompt_en": "How do you treat your password?",
+    "choices": ["Řeknu ho kamarádovi", "Napíšu ho na papír a nechám ho ve třídě", "Heslo si nechám pro sebe a mám ho silné", "Dám ho do veřejného chatu"],
+    "choices_en": ["Tell it to a friend", "Write it on paper and leave it in class", "Keep it to myself and make it strong", "Put it in a public chat"],
     "correctIndex": 2,
     "explanation": "Heslo je tajné. Silné heslo chrání účet a neměl/a bys ho nikomu říkat.",
+    "explanation_en": "A password is secret. A strong password protects your account - never share it.",
     "difficulty": 1
   },
   {
     "id": "k13",
-    "prompt": "Zpráva říká: „Vyhrál/a jsi telefon! Klikni tady.“ Co je nejlepší?",
-    "choices": [
-      "Kliknout hned",
-      "Nejprve se poradit s dospělým a neklikat na podezřelé odkazy",
-      "Poslat zprávu všem"
-    ],
+    "prompt": "Zpráva říká, že jsi vyhrál/a telefon a máš kliknout. Co je nejlepší?",
+    "prompt_en": "A message says you won a phone and tells you to click a link. What is the best action?",
+    "choices": ["Kliknout hned", "Nejprve se poradit s dospělým a neklikat na podezřelé odkazy", "Poslat zprávu všem"],
+    "choices_en": ["Click right away", "First consult an adult and do not click suspicious links", "Forward the message to everyone"],
     "correctIndex": 1,
     "explanation": "Výhry a dárky bývají trik. Když si nejsi jistý/á, neklikej a řekni to dospělému.",
+    "explanation_en": "Prizes and gifts are often tricks. If unsure, do not click and tell an adult.",
     "difficulty": 1
   },
   {
     "id": "k14",
     "prompt": "Co uděláš, když najdeš cizí platební kartu?",
-    "choices": [
-      "Zkusím s ní něco koupit",
-      "Nechám si ji",
-      "Odevzdám ji dospělému nebo na bezpečné místo (např. policie/recepce)",
-      "Vyfotím ji a dám na internet"
-    ],
+    "prompt_en": "What do you do if you find someone else's payment card?",
+    "choices": ["Zkusím s ní něco koupit", "Nechám si ji", "Odevzdám ji dospělému nebo na bezpečné místo (např. policie/recepce)", "Vyfotím ji a dám na internet"],
+    "choices_en": ["Try to buy something with it", "Keep it", "Hand it to an adult or a safe place such as the police or reception", "Take a photo and post it online"],
     "correctIndex": 2,
     "explanation": "Cizí karta není hračka. Odevzdej ji dospělému nebo na bezpečné místo.",
+    "explanation_en": "Someone else's card is not a toy. Hand it to an adult or a safe place.",
     "difficulty": 1
   },
   {
     "id": "k15",
     "prompt": "Když máš telefon, je dobré mít…",
-    "choices": [
-      "Žádný zámek, ať se rychle odemkne",
-      "PIN/otisk prstu a zamykání obrazovky",
-      "Heslo napsané na nálepce na telefonu"
-    ],
+    "prompt_en": "When you have a phone, it is good to have…",
+    "choices": ["Žádný zámek, ať se rychle odemkne", "PIN/otisk prstu a zamykání obrazovky", "Heslo napsané na nálepce na telefonu"],
+    "choices_en": ["No lock so it unlocks quickly", "PIN or fingerprint and screen lock", "Password written on a sticker on the phone"],
     "correctIndex": 1,
     "explanation": "Zámek obrazovky chrání tvoje účty a zprávy, když telefon ztratíš.",
+    "explanation_en": "A screen lock protects your accounts and messages if you lose your phone.",
     "difficulty": 1
   },
   {
     "id": "k16",
-    "prompt": "Co uděláš, když ti někdo pošle „ověřovací kód“ a chce, abys ho přeposlal/a?",
-    "choices": [
-      "Přepošlu ho",
-      "Nikdy ho neposílám a řeknu to dospělému",
-      "Napíšu ho do komentáře"
-    ],
+    "prompt": "Co uděláš, když ti někdo pošle ověřovací kód a chce, abys ho přeposlal/a?",
+    "prompt_en": "What do you do if someone sends you a verification code and wants you to forward it?",
+    "choices": ["Přepošlu ho", "Nikdy ho neposílám a řeknu to dospělému", "Napíšu ho do komentáře"],
+    "choices_en": ["Forward it", "Never forward it and tell an adult", "Write it in a comment"],
     "correctIndex": 1,
     "explanation": "Kódy jsou tajné. Kdo je získá, může se přihlásit do účtu.",
+    "explanation_en": "Codes are secret. Whoever gets them can log in to an account.",
     "difficulty": 2
   },
   {
     "id": "k17",
     "prompt": "Které údaje je nejlepší NIKDY nesdílet?",
-    "choices": [
-      "Číslo karty nebo kód z SMS",
-      "Oblíbený sport",
-      "Koníčky"
-    ],
+    "prompt_en": "Which details should you NEVER share?",
+    "choices": ["Číslo karty nebo kód z SMS", "Oblíbený sport", "Koníčky"],
+    "choices_en": ["Card number or SMS code", "Favourite sport", "Hobbies"],
     "correctIndex": 0,
     "explanation": "Číslo karty a kódy jsou citlivé. Koníčky jsou většinou v pohodě.",
+    "explanation_en": "Card numbers and codes are sensitive. Hobbies are usually fine.",
     "difficulty": 1
   },
   {
     "id": "k18",
     "prompt": "Když ti někdo napíše něco nepříjemného nebo divného, co můžeš udělat?",
-    "choices": [
-      "Odpovědět mu ještě víc",
-      "Zablokovat ho a říct to dospělému",
-      "Poslat mu svoje údaje"
-    ],
+    "prompt_en": "If someone sends you something unpleasant or strange, what can you do?",
+    "choices": ["Odpovědět mu ještě víc", "Zablokovat ho a říct to dospělému", "Poslat mu svoje údaje"],
+    "choices_en": ["Reply with even more", "Block them and tell an adult", "Send them your personal details"],
     "correctIndex": 1,
     "explanation": "Máš právo se chránit. Zablokuj ho a řekni to dospělému.",
+    "explanation_en": "You have the right to protect yourself. Block them and tell an adult.",
     "difficulty": 1
   },
   {
     "id": "k19",
-    "prompt": "Na tabletu vyskočí okno: „Stáhni si super aplikaci a dostaneš peníze!“ Co uděláš?",
-    "choices": [
-      "Stáhnu ji hned",
-      "Zeptám se dospělého a stahuju jen z oficiálního obchodu",
-      "Napíšu jim svou adresu"
-    ],
+    "prompt": "Na tabletu vyskočí okno: stáhni si super aplikaci a dostaneš peníze! Co uděláš?",
+    "prompt_en": "A pop-up appears on your tablet saying download this great app and get money. What do you do?",
+    "choices": ["Stáhnu ji hned", "Zeptám se dospělého a stahuju jen z oficiálního obchodu", "Napíšu jim svou adresu"],
+    "choices_en": ["Download it right away", "Ask an adult and only download from the official store", "Write them my address"],
     "correctIndex": 1,
     "explanation": "Aplikace stahuj jen z oficiálního obchodu a když si nejsi jistý/á, ptej se dospělého.",
+    "explanation_en": "Only download apps from the official store, and if unsure, ask an adult.",
     "difficulty": 2
   },
   {
     "id": "k20",
     "prompt": "Co je dobré dělat, když někam píšeš jméno a adresu?",
-    "choices": [
-      "Dát je všude, aby tě našli",
-      "Dávat jen tam, kde je to nutné, a vždy s dospělým",
-      "Napsat je do hry do chatu"
-    ],
+    "prompt_en": "What is good practice when entering your name and address somewhere?",
+    "choices": ["Dát je všude, aby tě našli", "Dávat jen tam, kde je to nutné, a vždy s dospělým", "Napsat je do hry do chatu"],
+    "choices_en": ["Put them everywhere so people can find you", "Only where necessary, and always with an adult", "Write them in a game chat"],
     "correctIndex": 1,
     "explanation": "Osobní údaje dávej jen tam, kde musíš, a ideálně s pomocí dospělého.",
+    "explanation_en": "Only share personal details where you must, ideally with an adult's help.",
     "difficulty": 2
   },
   {
     "id": "k21",
     "prompt": "Když máš podezřelý odkaz, co je nejlepší?",
-    "choices": [
-      "Kliknout a zjistit",
-      "Nechat být a zeptat se dospělého",
-      "Poslat ho dál"
-    ],
+    "prompt_en": "If you have a suspicious link, what is the best action?",
+    "choices": ["Kliknout a zjistit", "Nechat být a zeptat se dospělého", "Poslat ho dál"],
+    "choices_en": ["Click it and find out", "Leave it and ask an adult", "Forward it"],
     "correctIndex": 1,
     "explanation": "Nejlepší je neklikat. Když si nejsi jistý/á, ptej se dospělého.",
+    "explanation_en": "Best not to click. If unsure, ask an adult.",
     "difficulty": 1
   },
   {
     "id": "k22",
-    "prompt": "Když někdo říká: „Jsem tvůj kamarád, ale mám nové číslo, pošli mi peníze,“ co uděláš?",
-    "choices": [
-      "Pošlu peníze hned",
-      "Ověřím si to jinak (zavolám kamarádovi/rodiči) a řeknu to dospělému",
-      "Pošlu mu heslo"
-    ],
+    "prompt": "Když někdo říká: jsem tvůj kamarád, ale mám nové číslo, pošli mi peníze. Co uděláš?",
+    "prompt_en": "Someone says they are your friend but have a new number and asks you to send them money. What do you do?",
+    "choices": ["Pošlu peníze hned", "Ověřím si to jinak (zavolám kamarádovi/rodiči) a řeknu to dospělému", "Pošlu mu heslo"],
+    "choices_en": ["Send money right away", "Verify another way such as calling the friend or a parent and tell an adult", "Send them my password"],
     "correctIndex": 1,
     "explanation": "Někdo se může vydávat za kamaráda. Vždy si to ověř jinou cestou a řekni to dospělému.",
+    "explanation_en": "Someone may be pretending to be your friend. Always verify another way and tell an adult.",
     "difficulty": 2
   },
   {
     "id": "k23",
     "prompt": "Kde je lepší zadávat přihlašovací údaje?",
-    "choices": [
-      "Na veřejném počítači, kde jsou všichni",
-      "Na svém zařízení a jen na správné stránce/aplikaci",
-      "V komentářích pod videem"
-    ],
+    "prompt_en": "Where is it better to enter your login details?",
+    "choices": ["Na veřejném počítači, kde jsou všichni", "Na svém zařízení a jen na správné stránce/aplikaci", "V komentářích pod videem"],
+    "choices_en": ["On a public computer where everyone is", "On your own device and only on the correct website or app", "In the comments under a video"],
     "correctIndex": 1,
     "explanation": "Přihlašovací údaje piš jen na svém zařízení a jen na správném webu nebo v aplikaci.",
+    "explanation_en": "Only enter login details on your own device and only on the correct website or app.",
     "difficulty": 2
   },
   {
     "id": "k24",
-    "prompt": "Co znamená, že něco je „tajné“?",
-    "choices": [
-      "Může to vědět každý",
-      "Může to vědět jen ty a lidé, kterým věříš (třeba rodiče)",
-      "Napíšu to všem do skupiny"
-    ],
+    "prompt": "Co znamená, že něco je tajné?",
+    "prompt_en": "What does it mean that something is secret?",
+    "choices": ["Může to vědět každý", "Může to vědět jen ty a lidé, kterým věříš (třeba rodiče)", "Napíšu to všem do skupiny"],
+    "choices_en": ["Everyone can know it", "Only you and people you trust such as parents can know it", "I write it to everyone in a group"],
     "correctIndex": 1,
     "explanation": "Tajné věci (hesla, kódy) nepatří do chatu ani na internet.",
+    "explanation_en": "Secret things like passwords and codes do not belong in chats or online.",
     "difficulty": 1
   },
   {
     "id": "k25",
-    "prompt": "Co uděláš, když ti hra nabízí „zdarma mince“, ale chce, abys vyplnil/a údaje o kartě?",
-    "choices": [
-      "Vyplním je",
-      "Nic nevyplňuji a řeknu to dospělému",
-      "Pošlu tam svůj kód z SMS"
-    ],
+    "prompt": "Co uděláš, když ti hra nabízí zdarma mince, ale chce, abys vyplnil/a údaje o kartě?",
+    "prompt_en": "A game offers you free coins but asks for your card details. What do you do?",
+    "choices": ["Vyplním je", "Nic nevyplňuji a řeknu to dospělému", "Pošlu tam svůj kód z SMS"],
+    "choices_en": ["Fill them in", "Do not fill anything in and tell an adult", "Send them my SMS code"],
     "correctIndex": 1,
-    "explanation": "„Zdarma“ nabídky často lákají na podvod. Údaje o kartě ani kódy nikam nepiš.",
+    "explanation": "Zdarma nabídky často lákají na podvod. Údaje o kartě ani kódy nikam nepiš.",
+    "explanation_en": "Free offers are often scams. Never enter card details or codes.",
     "difficulty": 2
   }
 ]

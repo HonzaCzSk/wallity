@@ -1,243 +1,222 @@
 [
   {
     "id": "n01",
-    "prompt": "Přišel e-mail: „Banka zablokovala účet, potvrďte přihlášení přes odkaz.“ Co je správně?",
-    "choices": [
-      "Kliknout na odkaz a přihlásit se",
-      "Otevřít bankovní aplikaci nebo zadat web ručně",
-      "Odpovědět e-mailem a poslat údaje"
-    ],
+    "prompt": "Přišel e-mail: \u201EBanka zablokovala účet, potvrďte přihlášení přes odkaz.\u201C Co je správně?",
+    "prompt_en": "An email claims your bank blocked your account and asks you to confirm your login via a link. What is correct?",
+    "choices": ["Kliknout na odkaz a přihlásit se", "Otevřít bankovní aplikaci nebo zadat web ručně", "Odpovědět e-mailem a poslat údaje"],
+    "choices_en": ["Click the link and log in", "Open the banking app or type the address manually", "Reply by email and send your details"],
     "correctIndex": 1,
     "explanation": "Odkazy v e-mailu mohou vést na podvodnou stránku. Banku řeš přes oficiální kanály.",
+    "explanation_en": "Links in emails may lead to fraudulent sites. Always use official channels for banking.",
     "difficulty": 1
   },
   {
     "id": "n02",
     "prompt": "Někdo po telefonu chce autorizační kód z SMS. Co uděláš?",
-    "choices": [
-      "Kód řeknu, aby to banka ověřila",
-      "Kód nikdy neříkám, hovor ukončím a zavolám bance na oficiální číslo",
-      "Pošlu screenshot SMS"
-    ],
+    "prompt_en": "Someone on the phone asks for the authorization code from your SMS. What do you do?",
+    "choices": ["Kód řeknu, aby to banka ověřila", "Kód nikdy neříkám, hovor ukončím a zavolám bance na oficiální číslo", "Pošlu screenshot SMS"],
+    "choices_en": ["Tell them the code so the bank can verify", "Never share the code, end the call and call the bank on its official number", "Send a screenshot of the SMS"],
     "correctIndex": 1,
     "explanation": "Autorizační kód je klíč k účtu. Banka ho po telefonu nevyžaduje.",
+    "explanation_en": "An authorization code is the key to your account. A bank will never ask for it over the phone.",
     "difficulty": 1
   },
   {
     "id": "n03",
-    "prompt": "SMS tvrdí: „Doručení balíku selhalo, doplaťte 39 Kč zde…“ Co je nejlepší postup?",
-    "choices": [
-      "Kliknout na odkaz a zaplatit",
-      "Ověřit zásilku v oficiální aplikaci dopravce / zadat web ručně",
-      "Zadat údaje z karty a pak to řešit"
-    ],
+    "prompt": "SMS tvrdí: doručení balíku selhalo, doplaťte 39 Kč přes přiložený odkaz. Co je nejlepší postup?",
+    "prompt_en": "An SMS claims your package delivery failed and asks you to pay a small fee via the attached link. What is best?",
+    "choices": ["Kliknout na odkaz a zaplatit", "Ověřit zásilku v oficiální aplikaci dopravce / zadat web ručně", "Zadat údaje z karty a pak to řešit"],
+    "choices_en": ["Click the link and pay", "Check the parcel in the carrier's official app or type the website manually", "Enter card details and deal with it later"],
     "correctIndex": 1,
     "explanation": "Typický scam. Ověřuj jen přes oficiální aplikaci nebo web napsaný ručně.",
+    "explanation_en": "A typical scam. Only verify through the official app or a manually typed website.",
     "difficulty": 2
   },
   {
     "id": "n04",
     "prompt": "E-mail vypadá jako od banky, ale adresa odesílatele je divná a text tlačí na rychlé jednání. Co je nejlepší?",
-    "choices": [
-      "Hned jednat, ať nepřijdu o peníze",
-      "Otevřít bankovní aplikaci a zkontrolovat, jestli je problém skutečný",
-      "Přeposlat e-mail známým"
-    ],
+    "prompt_en": "An email looks like it is from your bank, but the sender address is odd and the text urges immediate action. What is best?",
+    "choices": ["Hned jednat, ať nepřijdu o peníze", "Otevřít bankovní aplikaci a zkontrolovat, jestli je problém skutečný", "Přeposlat e-mail známým"],
+    "choices_en": ["Act immediately so I do not lose money", "Open the banking app and check whether the issue is real", "Forward the email to acquaintances"],
     "correctIndex": 1,
     "explanation": "Nátlak a divná adresa jsou typické znaky podvodu. Vždy ověřuj přes oficiální kanály.",
+    "explanation_en": "Urgency and odd sender addresses are classic scam signs. Always verify through official channels.",
     "difficulty": 2
-  }
-  ,
+  },
   {
     "id": "n05",
-    "prompt": "Zavolá „banka“ a tvrdí, že musíte peníze převést na „bezpečný účet“, jinak o ně přijdete. Co je správně?",
-    "choices": [
-      "Převést peníze hned, ať jsou v bezpečí",
-      "Hovor ukončit a zavolat zpět na oficiální číslo banky",
-      "Požádat volajícího o více času"
-    ],
+    "prompt": "Zavolá banka a tvrdí, že musíte peníze převést na bezpečný účet, jinak o ně přijdete. Co je správně?",
+    "prompt_en": "Someone claiming to be your bank calls and says you must transfer money to a safe account or lose it. What is correct?",
+    "choices": ["Převést peníze hned, ať jsou v bezpečí", "Hovor ukončit a zavolat zpět na oficiální číslo banky", "Požádat volajícího o více času"],
+    "choices_en": ["Transfer the money immediately to keep it safe", "End the call and call back on the bank's official number", "Ask the caller for more time"],
     "correctIndex": 1,
-    "explanation": "„Bezpečný účet“ je typický podvod. Vždy ověřuj přes oficiální kontakt banky.",
+    "explanation": "Bezpečný účet je typický podvod. Vždy ověřuj přes oficiální kontakt banky.",
+    "explanation_en": "A safe account transfer is a classic scam. Always verify through the bank's official contact.",
     "difficulty": 2
   },
   {
     "id": "n06",
     "prompt": "E-mail tvrdí, že máte doplatit malou částku a chce údaje z karty. Co je nejlepší postup?",
-    "choices": [
-      "Zadat kartu, je to jen pár korun",
-      "Nezadávat kartu a ověřit službu přes oficiální web/app",
-      "Poslat údaje přes chat"
-    ],
+    "prompt_en": "An email claims you need to pay a small extra amount and asks for your card details. What is best?",
+    "choices": ["Zadat kartu, je to jen pár korun", "Nezadávat kartu a ověřit službu přes oficiální web/app", "Poslat údaje přes chat"],
+    "choices_en": ["Enter the card details, it is only a small amount", "Do not enter card details and verify the service via the official website or app", "Send the details via chat"],
     "correctIndex": 1,
     "explanation": "Scammeři často chtějí malou platbu, aby získali údaje karty. Ověřuj jen oficiálně.",
+    "explanation_en": "Scammers often request small payments to capture card details. Only verify officially.",
     "difficulty": 2
   },
   {
     "id": "n07",
-    "prompt": "Na webu se objeví okno: „Zařízení je infikované, stáhněte si tento program.“ Co uděláš?",
-    "choices": [
-      "Stáhnu program",
-      "Zavřu stránku a případně spustím kontrolu přes svůj ověřený antivirus",
-      "Zavolám na číslo v okně"
-    ],
+    "prompt": "Na webu se objeví okno: Zařízení je infikované, stáhněte si tento program. Co uděláš?",
+    "prompt_en": "A pop-up appears on a website saying your device is infected and telling you to download a program. What do you do?",
+    "choices": ["Stáhnu program", "Zavřu stránku a případně spustím kontrolu přes svůj ověřený antivirus", "Zavolám na číslo v okně"],
+    "choices_en": ["Download the program", "Close the page and run a scan with my verified antivirus if needed", "Call the number shown in the window"],
     "correctIndex": 1,
     "explanation": "Pop-up okna často lžou. Nestahuj nic z neznámých stránek a nevolej čísla z reklamy.",
+    "explanation_en": "Pop-ups often lie. Do not download anything from unknown sites or call numbers shown in ads.",
     "difficulty": 2
   },
   {
     "id": "n08",
-    "prompt": "Co je nejlepší způsob, jak se přihlásit do internetbankingu z odkazu ve vyhledávači?",
-    "choices": [
-      "Kliknout na první reklamu ve výsledcích",
-      "Zadat adresu banky ručně nebo použít uloženou záložku / oficiální aplikaci",
-      "Kliknout na jakýkoliv odkaz, který vypadá podobně"
-    ],
+    "prompt": "Co je nejlepší způsob, jak se dostat do internetbankingu – přes odkaz z výsledků vyhledávače?",
+    "prompt_en": "What is the safest way to access internet banking when using a search engine?",
+    "choices": ["Kliknout na první reklamu ve výsledcích", "Zadat adresu banky ručně nebo použít uloženou záložku / oficiální aplikaci", "Kliknout na jakýkoliv odkaz, který vypadá podobně"],
+    "choices_en": ["Click the first ad in the search results", "Type the bank address manually or use a saved bookmark or the official app", "Click any link that looks similar enough"],
     "correctIndex": 1,
     "explanation": "Útočníci často kupují reklamy a napodobují adresy. Bezpečnější je psát adresu ručně nebo použít aplikaci.",
+    "explanation_en": "Attackers often buy ads and mimic addresses. It is safer to type the address manually or use the app.",
     "difficulty": 2
   },
   {
     "id": "n09",
     "prompt": "Někdo se vydává za podporu banky a chce, abys nainstaloval/a aplikaci pro vzdálenou správu (AnyDesk/TeamViewer). Co uděláš?",
-    "choices": [
-      "Nainstaluji ji a nechám je „opravit“ účet",
-      "Odmítnu, hovor ukončím a ověřím situaci přes oficiální kanály banky",
-      "Pošlu jim fotku občanky, ať si to ověří"
-    ],
+    "prompt_en": "Someone posing as bank support wants you to install a remote access app like AnyDesk or TeamViewer. What do you do?",
+    "choices": ["Nainstaluji ji a nechám je opravit účet", "Odmítnu, hovor ukončím a ověřím situaci přes oficiální kanály banky", "Pošlu jim fotku občanky, ať si to ověří"],
+    "choices_en": ["Install it and let them fix the account", "Refuse, end the call, and verify the situation via the bank's official channels", "Send them a photo of my ID to verify"],
     "correctIndex": 1,
     "explanation": "Vzdálená správa dává útočníkovi kontrolu nad zařízením. Banka to takto neřeší.",
+    "explanation_en": "Remote access gives an attacker control over your device. Banks do not resolve issues this way.",
     "difficulty": 2
   },
   {
     "id": "n10",
     "prompt": "Jaké je nejbezpečnější nastavení pro ověření plateb a přihlášení?",
-    "choices": [
-      "Bez ověření, ať je to rychlé",
-      "Dvoufázové ověření (2FA) a biometrie v aplikaci",
-      "Jeden PIN pro všechno"
-    ],
+    "prompt_en": "What is the most secure setting for payment and login verification?",
+    "choices": ["Bez ověření, ať je to rychlé", "Dvoufázové ověření (2FA) a biometrie v aplikaci", "Jeden PIN pro všechno"],
+    "choices_en": ["No verification, for speed", "Two-factor authentication (2FA) and biometrics in the app", "One PIN for everything"],
     "correctIndex": 1,
     "explanation": "2FA a biometrie výrazně snižují riziko zneužití účtu při úniku hesla.",
+    "explanation_en": "2FA and biometrics significantly reduce the risk of account misuse if a password is leaked.",
     "difficulty": 1
   },
   {
     "id": "n11",
-    "prompt": "Co uděláš, když ti někdo pošle QR kód s textem „zaplať pokutu hned“?",
-    "choices": [
-      "Naskenuji a zaplatím",
-      "Ověřím požadavek přes oficiální kanály (úřad/dopravce) a zkontroluji údaje příjemce",
-      "Přepošlu QR kód dál"
-    ],
+    "prompt": "Co uděláš, když ti někdo pošle QR kód s textem: zaplať pokutu hned?",
+    "prompt_en": "Someone sends you a QR code with a message telling you to pay a fine immediately. What do you do?",
+    "choices": ["Naskenuji a zaplatím", "Ověřím požadavek přes oficiální kanály (úřad/dopravce) a zkontroluji údaje příjemce", "Přepošlu QR kód dál"],
+    "choices_en": ["Scan it and pay", "Verify the request via official channels and check the recipient details before paying", "Forward the QR code to someone else"],
     "correctIndex": 1,
     "explanation": "QR platby lze zneužít. Vždy ověřuj kontext a kontroluj příjemce/částku před potvrzením.",
+    "explanation_en": "QR payments can be abused. Always verify the context and check the recipient and amount before confirming.",
     "difficulty": 2
   },
   {
     "id": "n12",
     "prompt": "Připojíš se na veřejnou Wi‑Fi a chceš kontrolovat banku. Co je správně?",
-    "choices": [
-      "Přihlásit se normálně, je to jedno",
-      "Raději použít mobilní data (nebo VPN) a oficiální aplikaci",
-      "Sdílet heslo k Wi‑Fi s ostatními"
-    ],
+    "prompt_en": "You connect to public Wi-Fi and want to check your bank account. What is correct?",
+    "choices": ["Přihlásit se normálně, je to jedno", "Raději použít mobilní data nebo VPN a oficiální aplikaci", "Sdílet heslo k Wi‑Fi s ostatními"],
+    "choices_en": ["Log in normally, it does not matter", "Prefer mobile data or a VPN and use the official app", "Share the Wi-Fi password with others"],
     "correctIndex": 1,
-    "explanation": "Veřejné Wi‑Fi mohou být rizikové. Mobilní data (nebo VPN) snižují šanci odposlechu/manipulace.",
+    "explanation": "Veřejné Wi‑Fi mohou být rizikové. Mobilní data nebo VPN snižují šanci odposlechu/manipulace.",
+    "explanation_en": "Public Wi-Fi can be risky. Mobile data or a VPN reduces the chance of eavesdropping or manipulation.",
     "difficulty": 2
   },
   {
     "id": "n13",
     "prompt": "Zaznamenáš platbu, kterou jsi neprovedl/a. Jaký je nejlepší první krok?",
-    "choices": [
-      "Počkat pár dní, třeba zmizí",
-      "Okamžitě zablokovat kartu / přístup a kontaktovat banku přes oficiální podporu",
-      "Napsat o tom na sociální sítě"
-    ],
+    "prompt_en": "You notice a payment you did not make. What is the best first step?",
+    "choices": ["Počkat pár dní, třeba zmizí", "Okamžitě zablokovat kartu / přístup a kontaktovat banku přes oficiální podporu", "Napsat o tom na sociální sítě"],
+    "choices_en": ["Wait a few days to see if it disappears", "Immediately block the card or access and contact the bank via official support", "Write about it on social media"],
     "correctIndex": 1,
     "explanation": "Čas hraje roli. Rychlá blokace a kontaktování banky může zabránit dalším škodám.",
+    "explanation_en": "Time matters. Quick blocking and contacting the bank can prevent further damage.",
     "difficulty": 1
   },
   {
     "id": "n14",
     "prompt": "Která kombinace je nejbezpečnější pro hesla do banky a e‑mailu?",
-    "choices": [
-      "Jedno heslo všude, ať si ho pamatuju",
-      "Dlouhá unikátní hesla + správce hesel",
-      "Krátká hesla, ale často měněná"
-    ],
+    "prompt_en": "Which combination is the most secure for banking and email passwords?",
+    "choices": ["Jedno heslo všude, ať si ho pamatuju", "Dlouhá unikátní hesla + správce hesel", "Krátká hesla, ale často měněná"],
+    "choices_en": ["One password everywhere so I remember it", "Long unique passwords plus a password manager", "Short passwords changed frequently"],
     "correctIndex": 1,
     "explanation": "Unikátní dlouhá hesla (ideálně ve správci) brání řetězovým únikům napříč službami.",
+    "explanation_en": "Unique long passwords (ideally in a manager) prevent chain leaks across services.",
     "difficulty": 2
   },
   {
     "id": "n15",
-    "prompt": "Dostaneš zprávu z „WhatsApp podpory banky“ s žádostí o ověřovací kód. Co platí?",
-    "choices": [
-      "Je to OK, WhatsApp je bezpečný",
-      "Je to podezřelé; kód nikdy nikomu neposílej a ověř to přes banku",
-      "Pošlu kód jen jednou"
-    ],
+    "prompt": "Dostaneš zprávu přes chat z podpory banky s žádostí o ověřovací kód. Co platí?",
+    "prompt_en": "You receive a chat message from so-called bank support asking for a verification code. What applies?",
+    "choices": ["Je to OK, chat je bezpečný", "Je to podezřelé; kód nikdy nikomu neposílej a ověř to přes banku", "Pošlu kód jen jednou"],
+    "choices_en": ["It is fine, chat is secure", "It is suspicious; never send the code and verify via the bank directly", "I will send the code just this once"],
     "correctIndex": 1,
     "explanation": "Kódy jsou určené jen pro tebe. Banka je přes chat běžně nechce a útočníci na to spoléhají.",
+    "explanation_en": "Codes are for you only. Banks do not normally request them via chat — attackers rely on this.",
     "difficulty": 1
   },
   {
     "id": "n16",
     "prompt": "Jak poznáš podvodnou doménu (webovou adresu) napodobující banku?",
-    "choices": [
-      "Je úplně stejná jako oficiální doména",
-      "Může mít překlepy, pomlčky navíc nebo jiné koncovky (.com místo .cz)",
-      "Podvodné domény neexistují"
-    ],
+    "prompt_en": "How do you spot a fraudulent web address mimicking a bank?",
+    "choices": ["Je úplně stejná jako oficiální doména", "Může mít překlepy, pomlčky navíc nebo jiné koncovky (.com místo .cz)", "Podvodné domény neexistují"],
+    "choices_en": ["It is identical to the official domain", "It may have typos, extra hyphens, or a different ending such as .com instead of .cz", "Fraudulent domains do not exist"],
     "correctIndex": 1,
-    "explanation": "Typické jsou drobné odchylky (např. „moje‑banka-secure.com“). Vždy kontroluj přesnou doménu.",
+    "explanation": "Typické jsou drobné odchylky. Vždy kontroluj přesnou doménu.",
+    "explanation_en": "Typical signs are small differences in the address. Always check the exact domain carefully.",
     "difficulty": 2
   },
   {
     "id": "n17",
-    "prompt": "Na telefonu vyskočí oznámení „Aktualizujte bankovní aplikaci zde“ s odkazem. Co uděláš?",
-    "choices": [
-      "Kliknu na odkaz",
-      "Aktualizuji jen přes oficiální obchod (Google Play / App Store)",
-      "Pošlu odkaz kamarádovi"
-    ],
+    "prompt": "Na telefonu vyskočí oznámení: Aktualizujte bankovní aplikaci zde. Co uděláš?",
+    "prompt_en": "A notification appears on your phone telling you to update your banking app via an attached link. What do you do?",
+    "choices": ["Kliknu na odkaz", "Aktualizuji jen přes oficiální obchod (Google Play / App Store)", "Pošlu odkaz kamarádovi"],
+    "choices_en": ["Click the link", "Update only through the official store such as Google Play or the App Store", "Send the link to a friend"],
     "correctIndex": 1,
     "explanation": "Falešné aktualizace instalují malware. Aplikace aktualizuj pouze přes oficiální obchod.",
+    "explanation_en": "Fake updates install malware. Only update apps through the official store.",
     "difficulty": 1
   },
   {
     "id": "n18",
     "prompt": "Zadáváš údaje z karty na webu. Co je dobrý signál bezpečnosti?",
-    "choices": [
-      "Web chce číslo karty i PIN",
-      "Web podporuje 3D Secure ověření a používá důvěryhodnou platební bránu",
-      "Web má hodně bannerů a slev"
-    ],
+    "prompt_en": "You are entering your card details on a website. What is a good security signal?",
+    "choices": ["Web chce číslo karty i PIN", "Web podporuje 3D Secure ověření a používá důvěryhodnou platební bránu", "Web má hodně bannerů a slev"],
+    "choices_en": ["The site asks for the card number and also the PIN", "The site supports 3D Secure and uses a trusted payment gateway", "The site has many banners and discounts"],
     "correctIndex": 1,
     "explanation": "PIN nikdy nezadávej online. 3D Secure a ověřená brána snižují riziko zneužití.",
+    "explanation_en": "Never enter your PIN online. 3D Secure and a verified gateway reduce misuse risk.",
     "difficulty": 2
   },
   {
     "id": "n19",
-    "prompt": "Co je bezpečný postup při „vrácení peněz“ od neznámého prodejce?",
-    "choices": [
-      "Dát jim číslo karty, CVV a kód z SMS, aby poslali refund",
-      "Nikdy neposílat kódy; refund řešit přes oficiální reklamaci / platební bránu / banku",
-      "Poslat fotku obou stran karty"
-    ],
+    "prompt": "Co je bezpečný postup při vrácení peněz od neznámého prodejce?",
+    "prompt_en": "What is the safe procedure when an unknown seller offers you a refund?",
+    "choices": ["Dát jim číslo karty, CVV a kód z SMS, aby poslali refund", "Nikdy neposílat kódy; refund řešit přes oficiální reklamaci / platební bránu / banku", "Poslat fotku obou stran karty"],
+    "choices_en": ["Give them the card number, CVV and SMS code so they can send the refund", "Never share codes; handle the refund through official complaint, payment gateway or bank", "Send a photo of both sides of the card"],
     "correctIndex": 1,
     "explanation": "Refund nepotřebuje autorizační kódy ani CVV přes chat. To je typický trik na převod/platbu.",
+    "explanation_en": "A refund does not need authorization codes or CVV via chat. That is a classic trick to extract a payment.",
     "difficulty": 3
   },
   {
     "id": "n20",
     "prompt": "Jaký je dobrý návyk pro ochranu bankovních notifikací a SMS kódů?",
-    "choices": [
-      "Mít zamčený telefon (PIN/biometrie) a skrýt citlivé náhledy na zamčené obrazovce",
-      "Nechat telefon bez zámku, ať je rychlý",
-      "Fotit SMS kódy do galerie"
-    ],
+    "prompt_en": "What is a good habit for protecting banking notifications and SMS codes?",
+    "choices": ["Mít zamčený telefon (PIN/biometrie) a skrýt citlivé náhledy na zamčené obrazovce", "Nechat telefon bez zámku, ať je rychlý", "Fotit SMS kódy do galerie"],
+    "choices_en": ["Keep the phone locked with PIN or biometrics and hide sensitive previews on the lock screen", "Leave the phone unlocked for speed", "Take photos of SMS codes and save them to the gallery"],
     "correctIndex": 0,
     "explanation": "Zámek obrazovky a omezení náhledů chrání kódy a notifikace před zneužitím, když telefon ztratíš.",
+    "explanation_en": "Screen lock and limited previews protect codes and notifications from misuse if you lose your phone.",
     "difficulty": 2
   }
 ]

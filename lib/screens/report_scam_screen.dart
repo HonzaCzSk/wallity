@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utils/seo.dart';
+import '../utils/language.dart';
+import '../lang/app_strings.dart';
 import '../widgets/panic_shell.dart';
 
 class ReportScamScreen extends StatefulWidget {
@@ -18,89 +20,87 @@ class _ReportScamScreenState extends State<ReportScamScreen> {
     );
   }
 
-Future<bool> _confirmLeave(BuildContext context) async {
-  final res = await showDialog<bool>(
-    context: context,
-    barrierDismissible: true,
-    builder: (ctx) => AlertDialog(
-      title: const Text('Opravdu chcete odejít?'),
-      content: const Text(
-        'Jste v krizovém režimu. Odchod může zpomalit řešení situace.',
+  Future<bool> _confirmLeave(BuildContext context) async {
+    final s = S(languageNotifier.value);
+    final res = await showDialog<bool>(
+      context: context,
+      barrierDismissible: true,
+      builder: (ctx) => AlertDialog(
+        title: Text(s.confirmLeaveTitle),
+        content: Text(s.confirmLeaveBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(false),
+            child: Text(s.stayButton),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(ctx).pop(true),
+            child: Text(s.leaveButton),
+          ),
+        ],
       ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.of(ctx).pop(false),
-          child: const Text('Zůstat'),
-        ),
-        ElevatedButton(
-          onPressed: () => Navigator.of(ctx).pop(true),
-          child: const Text('Odejít'),
-        ),
-      ],
-    ),
-  );
-  return res ?? false;
-}
+    );
+    return res ?? false;
+  }
 
-@override
-Widget build(BuildContext context) {
-  return PopScope(
-    canPop: false,
-    // ignore: deprecated_member_use
-    onPopInvoked: (didPop) async {
-      if (didPop) return;
-      final leave = await _confirmLeave(context);
-      if (!context.mounted) return;
-      if (leave) Navigator.of(context).pop();
-    },
-    child: const PanicShell(
-      title: 'Postup při podvodu',
-      child: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Co udělat ihned:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Text("• Okamžitě kontaktujte svou banku."),
-            Text("• Zablokujte kartu nebo přístup k účtu."),
-            Text("• Neodpovídejte dále podvodníkovi."),
-            SizedBox(height: 16),
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<bool>(
+      valueListenable: languageNotifier,
+      builder: (context, isEn, _) {
+        final s = S(isEn);
 
-            Text(
-              "Koho kontaktovat:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Text("• Oficiální zákaznickou linku vaší banky."),
-            Text("• Policii ČR (158) v případě finanční škody."),
-            SizedBox(height: 16),
+        return PopScope(
+          canPop: false,
+          // ignore: deprecated_member_use
+          onPopInvoked: (didPop) async {
+            if (didPop) return;
+            final leave = await _confirmLeave(context);
+            if (!context.mounted) return;
+            if (leave) Navigator.of(context).pop();
+          },
+          child: PanicShell(
+            title: s.reportScamTitle,
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(s.whatToDoNow,
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Text(s.reportStep1),
+                  Text(s.reportStep2),
+                  Text(s.reportStep3),
+                  const SizedBox(height: 16),
 
-            Text(
-              "Co si připravit:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 8),
-            Text("• Datum a čas incidentu."),
-            Text("• Screenshoty komunikace."),
-            Text("• Částku, která byla odcizena."),
-            SizedBox(height: 16),
+                  Text(s.whoToContact,
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Text(s.contactStep1),
+                  Text(s.contactStep2),
+                  const SizedBox(height: 16),
 
-            Text(
-              "Na co si dát pozor:",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  Text(s.whatToPrepare,
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Text(s.prepareStep1),
+                  Text(s.prepareStep2),
+                  Text(s.prepareStep3),
+                  const SizedBox(height: 16),
+
+                  Text(s.watchOut,
+                      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const SizedBox(height: 8),
+                  Text(s.watchStep1),
+                  Text(s.watchStep2),
+                  Text(s.watchStep3),
+                ],
+              ),
             ),
-            SizedBox(height: 8),
-            Text("• Banka nikdy nevyžaduje autorizační kód po telefonu."),
-            Text("• Nikdy nepřevádějte peníze na 'bezpečný účet'."),
-            Text("• Neinstalujte aplikace na žádost neznámé osoby."),
-          ],
-        ),
-      ),
-    ),
-  );
+          ),
+        );
+      },
+    );
   }
 }

@@ -4,6 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../config/remote_config.dart';
 import '../utils/seo.dart';
+import '../utils/language.dart';
+import '../lang/app_strings.dart';
 
 class AboutPage extends StatefulWidget {
   const AboutPage({super.key});
@@ -32,13 +34,10 @@ class _AboutPageState extends State<AboutPage> {
       setState(() {
         final v = info.version.trim();
         final b = info.buildNumber.trim();
-
         _version = v.isEmpty ? 'dev' : v;
         _buildNumber = b.isEmpty ? 'dev' : b;
       });
-    } catch (_) {
-      // necháme '-' (např. web build / omezení prostředí)
-    }
+    } catch (_) {}
   }
 
   Future<void> _openUrl(String url) async {
@@ -49,105 +48,113 @@ class _AboutPageState extends State<AboutPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("O aplikaci")),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            const Text("Wallity", style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
-            const SizedBox(height: 8),
-            const Text(
-              "Offline průvodce bezpečností: rychlé kontakty bank, nouzové kroky a krátké tréninky proti podvodům.",
-              style: TextStyle(color: Colors.black54),
-            ),
-            const SizedBox(height: 16),
+    return ValueListenableBuilder<bool>(
+      valueListenable: languageNotifier,
+      builder: (context, isEn, _) {
+        final s = S(isEn);
+        final isDevBuild = _version == 'dev' && _buildNumber == 'dev';
 
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(14),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text("Verze", style: TextStyle(fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 8),
-                    Text(
-                      _version == 'dev' && _buildNumber == 'dev'
-                          ? "Aplikace: dev build"
-                          : "Aplikace: $_version (build $_buildNumber)",
-                    ),
-                    const Text("Databáze (remote): ${RemoteConfig.dataVersion}"),
-                  ],
+        return Scaffold(
+          appBar: AppBar(title: Text(s.aboutTitle)),
+          body: SingleChildScrollView(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                const Text('Wallity',
+                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold)),
+                const SizedBox(height: 8),
+                Text(
+                  s.aboutDescription,
+                  style: const TextStyle(color: Colors.black54),
                 ),
-              ),
-            ),
+                const SizedBox(height: 16),
 
-            Card(
-              child: Padding(
-                padding: const EdgeInsets.all(14),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text("Jak to funguje", style: TextStyle(fontWeight: FontWeight.bold)),
-                    const SizedBox(height: 8),
-                    const Text(
-                      "Aplikace funguje offline. Když je internet k dispozici, může si stáhnout novější data (např. otázky a databázi bank).",
-                      style: TextStyle(color: Colors.black54),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(s.versionLabel,
+                            style: const TextStyle(fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 8),
+                        Text(isDevBuild
+                            ? s.devBuild
+                            : s.appVersion(_version, _buildNumber)),
+                        const Text('Databáze (remote): ${RemoteConfig.dataVersion}'),
+                      ],
                     ),
-                    const SizedBox(height: 12),
-                    ListTile(
-                      contentPadding: EdgeInsets.zero,
-                      leading: const Icon(Icons.cloud_download_outlined),
-                      title: const Text("Online data"),
-                      subtitle: const Text(RemoteConfig.baseDataUrl),
-                      onTap: () => _openUrl(RemoteConfig.baseDataUrl),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
 
-            const Card(
-              child: Padding(
-                padding: EdgeInsets.all(14),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Důležité upozornění", style: TextStyle(fontWeight: FontWeight.bold)),
-                    SizedBox(height: 8),
-                    Text(
-                      "• Wallity není banka ani státní instituce.\n"
-                      "• Nikdy neposílejte kódy z SMS ani přihlašovací údaje.\n"
-                      "• V nouzi používejte pouze oficiální kontakty a webové adresy.",
-                      style: TextStyle(color: Colors.black54),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(s.howItWorks,
+                            style: const TextStyle(fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 8),
+                        Text(
+                          s.howItWorksBody,
+                          style: const TextStyle(color: Colors.black54),
+                        ),
+                        const SizedBox(height: 12),
+                        ListTile(
+                          contentPadding: EdgeInsets.zero,
+                          leading: const Icon(Icons.cloud_download_outlined),
+                          title: Text(s.onlineData),
+                          subtitle: const Text(RemoteConfig.baseDataUrl),
+                          onTap: () => _openUrl(RemoteConfig.baseDataUrl),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
 
-            const SizedBox(height: 8),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(14),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(s.importantNotice,
+                            style: const TextStyle(fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 8),
+                        Text(
+                          s.noticeBody,
+                          style: const TextStyle(color: Colors.black54),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
 
-            ElevatedButton(
-              onPressed: () => _openUrl("https://wallity.cz"),
-              child: const Text("Otevřít wallity.cz"),
-            ),
-            const SizedBox(height: 10),
-            OutlinedButton(
-              onPressed: () => _openUrl("https://github.com/HonzaCzSk/wallity"),
-              child: const Text("GitHub repozitář"),
-            ),
+                const SizedBox(height: 8),
 
-            const SizedBox(height: 18),
-            const Text(
-              "Licence: MIT",
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 12, color: Colors.black38),
+                ElevatedButton(
+                  onPressed: () => _openUrl('https://wallity.cz'),
+                  child: Text(s.openWebsite),
+                ),
+                const SizedBox(height: 10),
+                OutlinedButton(
+                  onPressed: () => _openUrl('https://github.com/HonzaCzSk/wallity'),
+                  child: Text(s.githubRepo),
+                ),
+
+                const SizedBox(height: 18),
+                Text(
+                  s.license,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 12, color: Colors.black38),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
