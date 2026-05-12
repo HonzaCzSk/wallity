@@ -53,21 +53,22 @@ class _HomePageState extends State<HomePage> {
               // ── Tlačítko přepínání jazyka ──────────────────────────
               Padding(
                 padding: const EdgeInsets.only(right: 8),
-                child: TextButton(
+                child: OutlinedButton(
                   onPressed: () => languageNotifier.value = !languageNotifier.value,
-                  style: TextButton.styleFrom(
+                  style: OutlinedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: Colors.white.withValues(alpha: 0.20),
+                    side: const BorderSide(color: Colors.white, width: 1.5),
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
                   child: Text(
-                    isEn ? '🇨🇿 CZ' : '🇬🇧 EN',
+                    isEn ? 'CZ' : 'EN',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 13,
+                      color: Colors.white,
                     ),
                   ),
                 ),

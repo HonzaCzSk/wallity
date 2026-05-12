@@ -113,7 +113,7 @@ class _PanicScenarioScreenState extends State<PanicScenarioScreen> {
     summary.writeln('=== ${_scenarioTitle(s)} ===');
     if (doneItems.isNotEmpty) {
       summary.writeln();
-      summary.writeln(s.whatToDoNowSection + ':');
+      summary.writeln('${s.whatToDoNowSection}:');
       summary.writeAll(doneItems, '\n');
     }
     if (note.isNotEmpty) {
